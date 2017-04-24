@@ -11,7 +11,7 @@ Simple brochure website built on Comfortable Mexian Sofa. It has a news section 
 - Client - Nina Bhola (EAP)
 - Product Management - Roger Ingle
 - UX/Design - Michel Doudin
-- Developers - !(@stacywcmc)[http://github.com/stacywcmc] !(@spencerldixon)[http://github.com/spencerldixon]
+- Developers - [@stacywcmc](http://github.com/stacywcmc) [@spencerldixon](http://github.com/spencerldixon)
 
 ### Tech
 
