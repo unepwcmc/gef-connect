@@ -34,7 +34,7 @@ Simple brochure website built on Comfortable Mexian Sofa. It has a news section 
 
 You will need ImageMagick installed, if you're using OSX you can do this through homebrew `brew install imageMagick`
 
-`git clone https://github.com/unepwcmc/gef-connect`
-`cd gef-connect`
-`bundle install`
-`rails db:create && db:migrate`
+```git clone https://github.com/unepwcmc/gef-connect
+cd gef-connect
+bundle install
+rails db:create && db:migrate```
