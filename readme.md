@@ -1,4 +1,4 @@
-#GEF Connect (Global Environment Facility ) 
+#GEF Connect (Global Environment Facility )
 
 ##Notes
 
@@ -17,8 +17,9 @@ Simple brochure website built on Comfortable Mexian Sofa. It has a news section 
 
 - Foundation 6 (Using Flexbox grid)
 - Comfy Mexican Sofa
-- Ruby 2.2.2
+- Ruby 2.4.1
 - Rails 4.2.5.2
+- Postgresl 9.6
 
 ##Browser support
 
