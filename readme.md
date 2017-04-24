@@ -11,7 +11,7 @@ Simple brochure website built on Comfortable Mexian Sofa. It has a news section 
 - Client - Nina Bhola (EAP)
 - Product Management - Roger Ingle
 - UX/Design - Michel Doudin
-- Developers - Stacy Talbot, Spencer Dixon
+- Developers - !(@stacywcmc)[http://github.com/stacywcmc] !(@spencerldixon)[http://github.com/spencerldixon]
 
 ###Tech
 
@@ -32,19 +32,9 @@ Simple brochure website built on Comfortable Mexian Sofa. It has a news section 
 
 ##Local development
 
-1. Install Ruby
-1. Install Rails
-1. Install SASS
-1. Install ImageMagik `brew install imageMagick`
-1. Clone repo
-1. run `bundle`
+You will need ImageMagick installed, if you're using OSX you can do this through homebrew `brew install imageMagick`
 
-##Remote sites
-
-###Staging
-
-- Staging URL
-
-###Live
-
-- Live URL
+`git clone https://github.com/unepwcmc/gef-connect`
+`cd gef-connect`
+`bundle install`
+`rails db:create && db:migrate`
