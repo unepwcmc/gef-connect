@@ -26,17 +26,17 @@
         if articles.any? %>
           <articles>
 
-            <% articles.each do |a| %>c
+            <% articles.each do |article| %>
 
-              <article-listing category="<%= cms_block_content(:article_type, a) %>" ref="article">
-                <h3><%= link_to a.label, a.url(:relative) %></h3>
+              <article-listing category="<%= cms_block_content(:article_type, article) %>" ref="article">
+                <h3><%= link_to article.label, article.url(:relative) %></h3>
 
-                <% if(!cms_block_content(:image, a).to_s.strip.empty?)
-                  image_tag cms_block_content(:image, a).file.url(:small), alt: a.label
-                end %>
+                <% unless cms_block_content(:image, article).to_s.strip.empty? %>
+                  image_tag cms_block_content(:image, article).file.url(:small), alt: article.label
+                <% end %>
 
                 <div>
-                  <%= cms_block_content(:introduction, a) %>
+                  <%= cms_block_content(:introduction, article) %>
                 </div>
               </article-listing>
 
