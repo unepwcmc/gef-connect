@@ -15,7 +15,7 @@ Simple brochure website built on Comfortable Mexian Sofa. It has a news section 
 
 ###Tech
 
-- Foundation 6 (Using Flexbox grid)
+- Foundation 6 (with 12 column grid)
 - Comfy Mexican Sofa
 - Ruby 2.2.2
 - Rails 4.2.5.2
