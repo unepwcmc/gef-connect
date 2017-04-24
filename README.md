@@ -1,4 +1,4 @@
-# GEF Connect (Global Environment Facility )
+# GEF Connect (Global Environment Facility)
 
 ## Notes
 

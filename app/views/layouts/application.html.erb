@@ -14,13 +14,10 @@
     
     <%= render "shared/header" %>
     
-    <div class="row">
-      
-      <h1><%= @cms_page.label %></h1>
+    <h1><%#= @cms_page.label %></h1>
 
-      <%= yield %>
-    </div>
-
+    <%= yield %>
+    
     <%= render "shared/footer" %>
     
     <%= javascript_include_tag "application" %>

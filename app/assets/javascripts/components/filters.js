@@ -145,6 +145,8 @@ Vue.component('article-listing', {
 });
 
 //declare new Vue instance
-new Vue({
-  el: '#app',
-});
+if($('#app').length > 0){
+  new Vue({
+    el: '#app'
+  });  
+}

@@ -1,12 +1,21 @@
 <header class="header">
-  <nav class="nav">
-    <% Comfy::Cms::Site.first.pages.root.children.published.each do |p| %>
-      <%= link_to p.label, p.url(:relative) %>
-    <% end %>
-  </nav>
   
+  <div class="title-bar" data-responsive-toggle="example-menu" data-hide-for="medium">
+    <button class="menu-icon" type="button" data-toggle="example-menu"></button>
+  </div>
 
-  <div class="row">
-    Header    
+  <div class="top-bar" id="example-menu">
+    <div class="top-bar-left">
+      <%= link_to '/' do %>
+        ICON
+      <% end %>
+    </div>
+    <div class="top-bar-right">
+      <nav class="nav">
+        <% Comfy::Cms::Site.first.pages.root.children.published.each do |p| %>
+          <%= link_to p.label, p.url(:relative) %>
+        <% end %>
+      </nav>
+    </div>
   </div>
 </header>
