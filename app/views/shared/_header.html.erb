@@ -1,0 +1,12 @@
+<header class="header">
+  <nav class="nav">
+    <% Comfy::Cms::Site.first.pages.root.children.published.each do |p| %>
+      <%= link_to p.label, p.url(:relative) %>
+    <% end %>
+  </nav>
+  
+
+  <div class="row">
+    Header    
+  </div>
+</header>

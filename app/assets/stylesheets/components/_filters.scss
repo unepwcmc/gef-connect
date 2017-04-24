@@ -1,0 +1,15 @@
+.filters__checkbox {
+  cursor: pointer;
+  
+  &:before {
+    border: solid rem-calc(2) grey;
+    content: '';
+    width: rem-calc(16); height: rem-calc(16);
+
+    display: inline-block;
+  }
+
+  &.active:before {
+    background-color: red;
+  }
+}

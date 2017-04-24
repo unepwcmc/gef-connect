@@ -1,0 +1,9 @@
+<div class="row column">
+  <h1><%= @cms_page.label %></h1>
+  
+  <div>
+  <%= cms_block_content(:introduction) %>
+  </div>
+
+  <%= image_tag cms_block_content(:image).file.url(:large), alt: @cms_page.label %>
+</div>

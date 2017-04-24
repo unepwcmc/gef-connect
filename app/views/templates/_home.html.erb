@@ -1,0 +1,18 @@
+<div class="template--home">
+  
+  <div class="row column">
+    <%= cms_block_content(:subtitle) %>
+  </div>
+
+  <div class="row">
+    <div class="small-12 medium-6 columns">
+      <%= cms_block_render(:image) %>
+      <%= cms_block_content_render(:left_column) %>
+    </div>
+    
+    <div class="small-12 medium-6 columns">
+      <%= cms_block_content_render(:right_column) %>
+    </div>
+  </div>
+
+</div>

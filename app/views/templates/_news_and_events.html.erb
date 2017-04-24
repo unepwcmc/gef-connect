@@ -1,0 +1,69 @@
+<div id="app" style="border: solid 4px yellow;">
+
+  <div class="row column">
+    <div>
+      <filters>
+        <%
+          article_types = get_article_types
+
+          article_types.each do |type|
+            concat "<checkbox name='#{type.name}' ref='checkbox'></checkbox>".html_safe
+          end
+        %>
+
+        <%
+        articles = @cms_page.children.published
+
+        if articles.any? %>
+          <articles>
+
+            <% articles.each do |a| %>
+
+              <article-listing category="<%= cms_block_content(:article_type, a) %>" ref="article">
+                <h3><%= link_to a.label, a.url(:relative) %></h3>
+                <%= image_tag cms_block_content(:image, a).file.url(:small), alt: a.label %>
+                <div>
+                  <%= cms_block_content(:introduction, a) %>
+                </div>
+              </article-listing>
+
+            <% end %>
+
+          </articles>
+        <% end %>
+
+      </filters>
+    </div>
+  </div>
+
+  <div class="row column">
+    <%
+      #article_types = get_article_types
+
+      #article_types.each do |type|
+       # concat "<p>#{type.name}</p>".html_safe
+      #end
+
+    %>
+
+    <div>
+    
+      
+    </div>
+
+  </div>
+
+  <div class="row column">
+  <% #@cms_page.children.published.each do |p| %>
+    
+    <div>
+      <h3><%#= link_to p.label, p.url(:relative) %></h3>
+      <%#= image_tag cms_block_content(:image, p).file.url(:small), alt: p.label %>
+      <div>
+      <%#= cms_block_content(:introduction, p) %>
+      </div>
+    </div>
+  <% #end %>
+  </div>
+
+</div>
