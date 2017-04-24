@@ -1,19 +1,19 @@
-#GEF Connect (Global Environment Facility )
+# GEF Connect (Global Environment Facility )
 
-##Notes
+## Notes
 
-###Intro
+### Intro
 
 Simple brochure website built on Comfortable Mexian Sofa. It has a news section with live filtering and pagination. Social sharing is present on every article page.
 
-###Team
+### Team
 
 - Client - Nina Bhola (EAP)
 - Product Management - Roger Ingle
 - UX/Design - Michel Doudin
 - Developers - !(@stacywcmc)[http://github.com/stacywcmc] !(@spencerldixon)[http://github.com/spencerldixon]
 
-###Tech
+### Tech
 
 - Foundation 6 (Using Flexbox grid)
 - Comfy Mexican Sofa
@@ -21,7 +21,7 @@ Simple brochure website built on Comfortable Mexian Sofa. It has a news section 
 - Rails 4.2.5.2
 - Postgresl 9.6
 
-##Browser support
+## Browser support
 
 - Most used in Africa (2017) - Chrome and Oracle
 
@@ -30,7 +30,7 @@ Simple brochure website built on Comfortable Mexian Sofa. It has a news section 
 - iOS..?
 - Android..?
 
-##Local development
+## Local development
 
 You will need ImageMagick installed, if you're using OSX you can do this through homebrew `brew install imageMagick`
 
