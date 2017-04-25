@@ -1,3 +1,7 @@
+<%# set variables for view %>
+<% @article_types = get_article_types %>
+<% @articles = @cms_page.children.published %>
+
 <div class="row">
   <div class="small-12 columns">
     <h1>News and Documents</h1>
@@ -12,27 +16,20 @@
   <div class="row column">
     <div>
       <filters>
-        <%
-          article_types = get_article_types
+        <% @article_types.each do |type| %>
+            <checkbox name='<%= type.name %>' ref='checkbox'></checkbox>
+        <% end %>
 
-          article_types.each do |type|
-            concat "<checkbox name='#{type.name}' ref='checkbox'></checkbox>".html_safe
-          end
-        %>
-
-        <%
-        articles = @cms_page.children.published
-
-        if articles.any? %>
+        <% if @articles.any? %>
           <articles>
 
-            <% articles.each do |article| %>
+            <% @articles.each do |article| %>
 
               <article-listing category="<%= cms_block_content(:article_type, article) %>" ref="article">
                 <h3><%= link_to article.label, article.url(:relative) %></h3>
 
                 <% unless cms_block_content(:image, article).to_s.strip.empty? %>
-                  image_tag cms_block_content(:image, article).file.url(:small), alt: article.label
+                  <%= image_tag cms_block_content(:image, article).file.url(:small), alt: article.label %>
                 <% end %>
 
                 <div>
