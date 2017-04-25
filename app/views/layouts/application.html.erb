@@ -6,6 +6,8 @@
 
     <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
 
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400,500,600,600i|Lato:400,700" rel="stylesheet">
+
     <%= stylesheet_link_tag "application" %>
     <%= csrf_meta_tags %>
   </head>
@@ -13,8 +15,6 @@
   <body>
     
     <%= render "shared/header" %>
-    
-    <h1><%#= @cms_page.label %></h1>
 
     <%= yield %>
     

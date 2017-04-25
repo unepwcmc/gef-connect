@@ -48,7 +48,7 @@
 
 $global-font-size: 100%;
 $global-width: rem-calc(1200);
-$global-lineheight: 1.5;
+$global-lineheight: 1.4;
 $foundation-palette: (
   primary: #2296A0,
   secondary: #FBC352,
@@ -58,12 +58,12 @@ $foundation-palette: (
 );
 $light-gray: #efefef;
 $medium-gray: #cacaca;
-$dark-gray: #8a8a8a;
+$dark-gray: #3E4E54;
 $black: #0a0a0a;
 $white: #fefefe;
 $body-background: $white;
-$body-font-color: $black;
-$body-font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
+$body-font-color: #222222;
+$body-font-family: $lato;
 $body-antialiased: true;
 $global-margin: 1rem;
 $global-padding: 1rem;
@@ -81,9 +81,9 @@ $print-transparent-backgrounds: true;
 
 $breakpoints: (
   small: 0,
-  medium: 640px,
-  large: 1024px,
-  xlarge: 1200px,
+  medium: 720px,
+  large: 1200px,
+  xlarge: 1400px,
   xxlarge: 1440px,
 );
 $print-breakpoint: large;
@@ -104,12 +104,12 @@ $block-grid-max: 8;
 // 4. Base Typography
 // ------------------
 
-$header-font-family: $body-font-family;
-$header-font-weight: $global-weight-normal;
+$header-font-family: $fira-sans;
+$header-font-weight: $semi-bold;
 $header-font-style: normal;
 $font-family-monospace: Consolas, 'Liberation Mono', Courier, monospace;
 $header-color: $primary-color;
-$header-lineheight: 1.4;
+$header-lineheight: 1.2;
 $header-margin-bottom: 0.5rem;
 $header-styles: (
   small: (
@@ -121,9 +121,17 @@ $header-styles: (
     'h6': ('font-size': 16),
   ),
   medium: (
-    'h1': ('font-size': 48),
-    'h2': ('font-size': 40),
-    'h3': ('font-size': 31),
+    'h1': ('font-size': 40),
+    'h2': ('font-size': 32),
+    'h3': ('font-size': 23),
+    'h4': ('font-size': 25),
+    'h5': ('font-size': 20),
+    'h6': ('font-size': 16),
+  ),
+  large: (
+    'h1': ('font-size': 47),
+    'h2': ('font-size': 37),
+    'h3': ('font-size': 26),
     'h4': ('font-size': 25),
     'h5': ('font-size': 20),
     'h6': ('font-size': 16),
@@ -240,7 +248,7 @@ $breadcrumbs-item-slash: true;
 // 11. Button
 // ----------
 
-$button-padding: 0.85em 1em;
+$button-padding: rem-calc(10 30);
 $button-margin: 0 0 $global-margin 0;
 $button-fill: solid;
 $button-background: $primary-color;
@@ -251,7 +259,7 @@ $button-radius: $global-radius;
 $button-sizes: (
   tiny: 0.6rem,
   small: 0.75rem,
-  default: 0.9rem,
+  default: rem-calc(14),
   large: 1.25rem,
 );
 $button-palette: $foundation-palette;

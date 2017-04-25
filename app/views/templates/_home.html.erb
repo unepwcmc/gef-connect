@@ -1,13 +1,15 @@
 <div class="template--home">
   
-  <div class="row hero">
-    <div class="small-12 small-centered medium-10 columns">
-      <h1>Connecting governments with biodiversity information for sustainable development</h1>
+  <section class="hero">
+    <div class="row">
+      <div class="small-11 small-centered medium-10 columns">
+        <h1>Connecting governments with biodiversity information for sustainable development</h1>
+      </div>
     </div>
-  </div>
+  </section>
 
-  <div class="row">
-    <div class="small-12 medium-6 columns">
+  <section class="row section-padding site-padding">
+    <div class="small-12 medium-7 columns text--large text--light text--fira-sans text--grey-dark">
       <p>
         <strong>Biodiversity and ecosystem services are essential components of a healthy economy,</strong> relvant across all sectors of society. However, the continued loss of the Worlds biodiversity is having significant consequences across a range of sectors including poverty reduction and development.
       </p>
@@ -16,61 +18,70 @@
       </p>
     </div>
     
-    <div class="small-12 medium-6 columns">
+    <div class="small-12 medium-5 columns text--fira-sans text--18 text--grey-dark">
       <p>
         <strong>Biodiversity and ecosystem services are essential components of a healthy economy,</strong> relvant across all sectors of society. However, the continued loss of the Worlds biodiversity is having significant consequences across a range of sectors including poverty reduction and development.
       </p>
-
-      FLAG FLAG FLAG
+      
+      <div class="icon-wrapper">
+        <%= image_tag 'icons/flag-ghana.svg', class: 'icon--flag', alt: 'The Ghana flag' %>
+        <%= image_tag 'icons/flag-mozambique.svg', class: 'icon--flag', alt: 'The Mozambique flag' %>
+        <%= image_tag 'icons/flag-uganda.svg', class: 'icon--flag', alt: 'The Uganda flag' %>
+      </div>
+    
     </div>
-  </div>
+  </section>
 
-  <section class="bg__grey">
+  <section class="bg__grey section-padding site-padding">
 
     <div class="row">
-      <div class="small-12 columns">
+      <div class="small-12 large-10 columns">
         <h2>Using an innovative deman, supply and sustain model the project will:</h2>
       </div>
     </div>
 
-    <div class="row home__task">
-      <div class="small-12 medium-4 columns">
-        ICON
+    <div class="row objective">
+      <div class="small-12 medium-4 large-offset-1 large-3 columns">
+        <%= image_tag 'icons/icon-head.svg', alt: 'Icon of a head to represent the section titled Understand Demand', class: 'objective__icon' %>
       </div>
-      <div class="small-12 medium-8 columns">
-        <h3><span class="text__number">1</span>Understand Demand</h3>
-        <p>Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum</p>
-      </div>
-    </div>
-
-    <div class="row home__task">
-      <div class="small-12 medium-8 columns">
-        <h3><span class="text__number">2</span>Ensure Supply</h3>
-        <p>Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum</p>
-      </div>
-      <div class="small-12 medium-4 columns">
-        ICON
+      <div class="small-12 medium-8 large-7 end columns">
+        <h3><span class="text--number">1</span>Understand Demand</h3>
+        <p>Clearly understand the in-country demands for, and the barriers to using, biodiversity information within government decision making including clarifying the format, timing and packaging required</p>
       </div>
     </div>
 
-
-  <div class="row home__task">
-      <div class="small-12 medium-4 columns">
-        ICON
+    <div class="row objective">
+      <div class="small-12 medium-push-8 medium-4 large-push-8 large-3 end columns">
+        <%= image_tag 'icons/icon-chain-link.svg', alt: 'Icon of a chain link to represent the section titled Ensure Supply', class: 'objective__icon' %>
       </div>
-      <div class="small-12 medium-8 columns">
-        <h3><span class="text__number">3</span>Sustain the flow of information</h3>
-        <p>Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum</p>
+      <div class="small-12 medium-pull-4 medium-8 large-pull-4 large-7 columns">
+        <h3><span class="text--number">2</span>Ensure Supply</h3>
+        <p>Mobilise and repackage existing biodiversity data and information from a range of sources (national and international) to meet a number of the above demands</p>
+      </div>
+    </div>
+
+
+  <div class="row objective">
+      <div class="small-12 medium-4 large-offset-1 large-3 columns">
+        <%= image_tag 'icons/icon-arrows.svg', alt: 'Icon of some arrows to represent the section titled Sustain the flow of information', class: 'objective__icon' %>
+      </div>
+      <div class="small-12 medium-8 large-7 end columns">
+        <h3><span class="text--number">3</span>Sustain the flow of information</h3>
+        <p>Strengthen the connection between government decision makers and biodiversity and ecosystem services data providers in order to sustainably provide policy-relevant, spatially explicit information to meet ongoing national needs.</p>
       </div>
     </div>
 
   </section>
 
-  <section>
-    <div class="row column">
-      <h2>News, Events and Documents</h2>
+  <section class="section-padding">
+    <div class="row">
+      <div class="small-12 medium-6 large-4 columns">
+        <h2>News &amp; Documents</h2>
+      </div>
+      <div class="small-12 medium-6 large-8 columns">
+        <%= link_to 'View all News & Documents >', 'news-and-documents', class: 'button' %>
+      </div>
     </div>
-    Insert article listing partial here
   </section>
   
 </div>

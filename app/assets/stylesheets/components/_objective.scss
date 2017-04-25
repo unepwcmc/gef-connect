@@ -1,0 +1,30 @@
+.objective {
+  @extend .text--grey-dark;
+  @extend .text--light;
+
+  font-family: $fira-sans;
+  font-size: rem-calc(19);
+  padding: rem-calc(24);
+
+  @include breakpoint(medium){ 
+    font-size: rem-calc(23);
+    padding: rem-calc(40); 
+  }
+  
+  @include breakpoint(large){ 
+    font-size: rem-calc(26);
+    padding: rem-calc(60); 
+  }
+
+  h3 { margin-bottom: rem-calc(16); }
+
+  &__icon {
+    @include breakpoint(small only){
+      max-width: rem-calc(190);
+    }
+
+    margin: 0 auto;
+
+    display: block;
+  }
+}

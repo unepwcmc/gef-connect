@@ -1,1 +1,57 @@
+//--------------------------------------------------------------------------------
+// base styles
+//--------------------------------------------------------------------------------
+// - site
+// - sections
+// - lists
+// - buttons
+//--------------------------------------------------------------------------------
+// site
+//--------------------------------------------------------------------------------
+// this class is used to add additional outer left and right padding to sections on 
+// mobile and tablet
+.site-padding {
+  @include breakpoint(small only){
+    padding-right: rem-calc(8);
+    padding-left: rem-calc(8);
+  }
+
+  @include breakpoint(medium only){
+    padding-right: rem-calc(15);
+    padding-left: rem-calc(15);    
+  }
+}
+
+//--------------------------------------------------------------------------------
+// sections
+//--------------------------------------------------------------------------------
+section {
+  &.section-padding {
+    padding-top: rem-calc(28);
+    padding-bottom: rem-calc(28);
+
+    @include breakpoint(medium){ 
+      padding-top: rem-calc(56);
+      padding-bottom: rem-calc(56);
+    }
+
+    @include breakpoint(large){ 
+      padding-top: rem-calc(70);
+      padding-bottom: rem-calc(70);
+    }
+  }  
+}
+
+//--------------------------------------------------------------------------------
+// lists
+//--------------------------------------------------------------------------------
 //style up ul and ol to match design
+
+//--------------------------------------------------------------------------------
+// buttons
+//--------------------------------------------------------------------------------
+.button {
+  font-family: $fira-sans;
+  font-style: italic;
+  font-weight: $semi-bold;
+}

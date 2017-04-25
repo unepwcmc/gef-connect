@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="271px" height="271px" viewBox="0 0 271 271" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 9</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="255" height="255" rx="127.5"></rect>
+        <filter x="-4.7%" y="-4.7%" width="109.4%" height="109.4%" filterUnits="objectBoundingBox" id="filter-2">
+            <feMorphology radius="1.5" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="0" dy="0" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.03 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Graphic-design" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Home" transform="translate(-234.000000, -2152.000000)">
+            <g id="Group-9" transform="translate(242.000000, 2160.000000)">
+                <g id="Rectangle">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                    <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                </g>
+                <g id="noun_446406" transform="translate(65.000000, 64.000000)" fill-rule="nonzero">
+                    <rect id="Rectangle-path" fill="#FCC445" x="0" y="0" width="124.84252" height="15.75"></rect>
+                    <rect id="Rectangle-path" fill="#1696A1" x="0" y="110.787402" width="124.84252" height="15.75"></rect>
+                    <path d="M98.8336614,36.75 L0,36.75 L0,52.5 L98.8336614,52.5 C104.472382,52.5 109.237205,57.309 109.237205,63 C109.237205,68.691 104.472382,73.5 98.8336614,73.5 L62.4212598,73.5 L62.4212598,57.666 L39.0132874,81.291 L62.4212598,104.916 L62.4212598,89.25 L98.8336614,89.25 C113.138533,89.25 124.84252,77.4375 124.84252,63 C124.84252,48.5625 113.138533,36.75 98.8336614,36.75 Z" id="Shape" fill="#FCC445"></path>
+                    <rect id="Rectangle-path" fill="#FCC445" x="0" y="73.5" width="20.8070866" height="15.75"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
