@@ -1,21 +1,26 @@
 <header class="header">
   
-  <div class="title-bar" data-responsive-toggle="example-menu" data-hide-for="medium">
-    <button class="menu-icon" type="button" data-toggle="example-menu"></button>
-  </div>
+  <div class="top-bar">
 
-  <div class="top-bar" id="example-menu">
-    <div class="top-bar-left">
+    <div class="top-bar__bar">
       <%= link_to '/' do %>
-        <%= image_tag 'logos/logo-gef-connect.svg', alt: 'GEF Connect logo' %>
+        <%= image_tag 'logos/logo-gef-connect.svg', alt: 'GEF Connect logo', class: 'top-bar__logo' %>
       <% end %>
+      
+      <div class="top-bar__burger-wrapper" data-responsive-toggle="main-menu" data-hide-for="medium">
+        <button class="top-bar__burger" type="button" data-toggle="main-menu"></button>
+      </div>
     </div>
-    <div class="top-bar-right">
+
+    <div id="main-menu" class="top-bar-right">
       <nav class="nav">
-        <% Comfy::Cms::Site.first.pages.root.children.published.each do |p| %>
-          <%= link_to p.label, p.url(:relative) %>
+        <%= active_link_to 'Home', '/', { title: 'Home', class: 'nav__a' } %>
+
+        <% Comfy::Cms::Site.first.pages.root.children.published.each do |page| %>
+          <%= active_link_to page.label, page.url(:relative), { title: page.label, class: 'nav__a' } %>
         <% end %>
       </nav>
     </div>
   </div>
+
 </header>

@@ -12,8 +12,14 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require foundation
+//= require foundation.core.js.es6
+//= require foundation.util.triggers.js
+//= require foundation.util.mediaQuery.js
+//= require foundation.responsiveMenu.js
+//= require foundation.responsiveToggle.js
 //= require vue
 //= require_tree .
 
-$(function(){ $(document).foundation(); });
+$(function(){ 
+  $(document).foundation();
+});
