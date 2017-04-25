@@ -21,6 +21,9 @@ gem 'vuejs-rails', '~> 2.2.1'
 # Config
 gem 'dotenv-rails', '~> 2.2.0'
 
+# Reporting
+gem 'appsignal'
+
 # Call 'byebug' anywhere in the code to stop execution and get a debugger console
 group :development, :test do
   gem 'byebug'

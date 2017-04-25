@@ -41,6 +41,9 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.5.1)
       public_suffix (~> 2.0, >= 2.0.2)
+    appsignal (2.1.2)
+      rack
+      thread_safe
     arel (6.0.4)
     autoprefixer-rails (6.7.7.1)
       execjs
@@ -224,6 +227,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  appsignal
   byebug
   coffee-rails (~> 4.1.0)
   comfortable_mexican_sofa (~> 1.12.10)
