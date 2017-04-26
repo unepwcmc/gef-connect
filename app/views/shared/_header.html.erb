@@ -3,7 +3,7 @@
   <div class="top-bar">
 
     <div class="top-bar__bar">
-      <%= link_to '/' do %>
+      <%= link_to root_path do %>
         <%= image_tag 'logos/logo-gef-connect.svg', alt: 'GEF Connect logo', class: 'top-bar__logo' %>
       <% end %>
       
@@ -14,7 +14,7 @@
 
     <div id="main-menu" class="top-bar-right">
       <nav class="nav">
-        <%= active_link_to 'Home', '/', { title: 'Home', class: 'nav__a' } %>
+        <%= active_link_to 'Home', root_path, { title: 'Home', class: 'nav__a' } %>
 
         <% Comfy::Cms::Site.first.pages.root.children.published.each do |page| %>
           <%= active_link_to page.label, page.url(:relative), { title: page.label, class: 'nav__a' } %>

@@ -27,15 +27,15 @@
       <div class="inline-block">
         <h4>Lorem ipsum</h4>
         <div>
-          <%= link_to '/', title: '', class: 'icon--flag-link' do %>
+          <%= link_to '#', title: '', class: 'icon--flag-link' do %>
             <%= image_tag 'icons/flag-ghana.svg', class: 'icon--flag', alt: 'The Ghana flag' %>
           <% end %>
         
-          <%= link_to '/', title: '', class: 'icon--flag-link' do %>
+          <%= link_to '#', title: '', class: 'icon--flag-link' do %>
             <%= image_tag 'icons/flag-mozambique.svg', class: 'icon--flag', alt: 'The Mozambique flag' %>
           <% end %>
 
-          <%= link_to '/', title: '', class: 'icon--flag-link' do %>
+          <%= link_to '#', title: '', class: 'icon--flag-link' do %>
             <%= image_tag 'icons/flag-uganda.svg', class: 'icon--flag', alt: 'The Uganda flag' %>
           <% end %>
         </div>
@@ -45,7 +45,7 @@
 
   <div class="footer__contact bg--grey">
     <div class="row column">
-      <%= link_to '/', class: 'footer__contact-link' do %>
+      <%= link_to root_path, class: 'footer__contact-link' do %>
         <%= image_tag 'logos/logo-gef-connect.svg', alt: 'GEF Connect logo' %>
       <% end %>
       
@@ -53,7 +53,7 @@
         <i class="fa fa-envelope" aria-hidden="true"></i>Contact us at <%= link_to 'connect@unep-wcmc.org', 'mailto:connect@unep-wcmc.org', title: 'Send an email to GEF Connect' %>
       </span>
 
-      <%= link_to '/', class: 'footer__contact-link show-for-medium' do %>
+      <%= link_to root_path, class: 'footer__contact-link show-for-medium' do %>
         <%= image_tag 'logos/logo-gef-connect-symbol.svg', alt: 'GEF Connect symbol', class: 'footer__contact--right' %>
       <% end %>
     </div>
