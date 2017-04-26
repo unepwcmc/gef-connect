@@ -17,7 +17,7 @@ gem 'comfortable_mexican_sofa', '~> 1.12.10'
 # Frontend
 gem 'foundation-rails', '~> 6.3.1.0'
 gem 'vuejs-rails', '~> 2.2.1'
-gem 'browserify-rails'
+gem 'browserify-rails', '~> 4.1.0'
 
 # Config
 gem 'dotenv-rails', '~> 2.2.0'
