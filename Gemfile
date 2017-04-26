@@ -14,9 +14,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # CMS
 gem 'comfortable_mexican_sofa', '~> 1.12.10'
 
-# Frontend frameworks
+# Frontend
 gem 'foundation-rails', '~> 6.3.1.0'
 gem 'vuejs-rails', '~> 2.2.1'
+gem 'browserify-rails'
 
 # Config
 gem 'dotenv-rails', '~> 2.2.0'

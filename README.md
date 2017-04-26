@@ -38,5 +38,6 @@ You will need ImageMagick installed, if you're using OSX you can do this through
 git clone https://github.com/unepwcmc/gef-connect
 cd gef-connect
 bundle install
+npm install
 rails db:create && db:migrate
 ```
