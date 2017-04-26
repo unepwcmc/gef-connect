@@ -1,4 +1,3 @@
-# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -23,30 +22,27 @@ ActiveRecord::Schema.define(version: 20170420130006) do
   create_table "comfy_cms_blocks", force: :cascade do |t|
     t.string   "identifier",     null: false
     t.text     "content"
-    t.integer  "blockable_id"
     t.string   "blockable_type"
+    t.integer  "blockable_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.index ["blockable_id", "blockable_type"], name: "index_comfy_cms_blocks_on_blockable_id_and_blockable_type", using: :btree
+    t.index ["identifier"], name: "index_comfy_cms_blocks_on_identifier", using: :btree
   end
-
-  add_index "comfy_cms_blocks", ["blockable_id", "blockable_type"], name: "index_comfy_cms_blocks_on_blockable_id_and_blockable_type", using: :btree
-  add_index "comfy_cms_blocks", ["identifier"], name: "index_comfy_cms_blocks_on_identifier", using: :btree
 
   create_table "comfy_cms_categories", force: :cascade do |t|
     t.integer "site_id",          null: false
     t.string  "label",            null: false
     t.string  "categorized_type", null: false
+    t.index ["site_id", "categorized_type", "label"], name: "index_cms_categories_on_site_id_and_cat_type_and_label", unique: true, using: :btree
   end
-
-  add_index "comfy_cms_categories", ["site_id", "categorized_type", "label"], name: "index_cms_categories_on_site_id_and_cat_type_and_label", unique: true, using: :btree
 
   create_table "comfy_cms_categorizations", force: :cascade do |t|
     t.integer "category_id",      null: false
     t.string  "categorized_type", null: false
     t.integer "categorized_id",   null: false
+    t.index ["category_id", "categorized_type", "categorized_id"], name: "index_cms_categorizations_on_cat_id_and_catd_type_and_catd_id", unique: true, using: :btree
   end
-
-  add_index "comfy_cms_categorizations", ["category_id", "categorized_type", "categorized_id"], name: "index_cms_categorizations_on_cat_id_and_catd_type_and_catd_id", unique: true, using: :btree
 
   create_table "comfy_cms_files", force: :cascade do |t|
     t.integer  "site_id",                                    null: false
@@ -59,12 +55,11 @@ ActiveRecord::Schema.define(version: 20170420130006) do
     t.integer  "position",                       default: 0, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.index ["site_id", "block_id"], name: "index_comfy_cms_files_on_site_id_and_block_id", using: :btree
+    t.index ["site_id", "file_file_name"], name: "index_comfy_cms_files_on_site_id_and_file_file_name", using: :btree
+    t.index ["site_id", "label"], name: "index_comfy_cms_files_on_site_id_and_label", using: :btree
+    t.index ["site_id", "position"], name: "index_comfy_cms_files_on_site_id_and_position", using: :btree
   end
-
-  add_index "comfy_cms_files", ["site_id", "block_id"], name: "index_comfy_cms_files_on_site_id_and_block_id", using: :btree
-  add_index "comfy_cms_files", ["site_id", "file_file_name"], name: "index_comfy_cms_files_on_site_id_and_file_file_name", using: :btree
-  add_index "comfy_cms_files", ["site_id", "label"], name: "index_comfy_cms_files_on_site_id_and_label", using: :btree
-  add_index "comfy_cms_files", ["site_id", "position"], name: "index_comfy_cms_files_on_site_id_and_position", using: :btree
 
   create_table "comfy_cms_layouts", force: :cascade do |t|
     t.integer  "site_id",                    null: false
@@ -79,10 +74,9 @@ ActiveRecord::Schema.define(version: 20170420130006) do
     t.boolean  "is_shared",  default: false, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.index ["parent_id", "position"], name: "index_comfy_cms_layouts_on_parent_id_and_position", using: :btree
+    t.index ["site_id", "identifier"], name: "index_comfy_cms_layouts_on_site_id_and_identifier", unique: true, using: :btree
   end
-
-  add_index "comfy_cms_layouts", ["parent_id", "position"], name: "index_comfy_cms_layouts_on_parent_id_and_position", using: :btree
-  add_index "comfy_cms_layouts", ["site_id", "identifier"], name: "index_comfy_cms_layouts_on_site_id_and_identifier", unique: true, using: :btree
 
   create_table "comfy_cms_pages", force: :cascade do |t|
     t.integer  "site_id",                        null: false
@@ -99,19 +93,17 @@ ActiveRecord::Schema.define(version: 20170420130006) do
     t.boolean  "is_shared",      default: false, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.index ["parent_id", "position"], name: "index_comfy_cms_pages_on_parent_id_and_position", using: :btree
+    t.index ["site_id", "full_path"], name: "index_comfy_cms_pages_on_site_id_and_full_path", using: :btree
   end
-
-  add_index "comfy_cms_pages", ["parent_id", "position"], name: "index_comfy_cms_pages_on_parent_id_and_position", using: :btree
-  add_index "comfy_cms_pages", ["site_id", "full_path"], name: "index_comfy_cms_pages_on_site_id_and_full_path", using: :btree
 
   create_table "comfy_cms_revisions", force: :cascade do |t|
     t.string   "record_type", null: false
     t.integer  "record_id",   null: false
     t.text     "data"
     t.datetime "created_at"
+    t.index ["record_type", "record_id", "created_at"], name: "index_cms_revisions_on_rtype_and_rid_and_created_at", using: :btree
   end
-
-  add_index "comfy_cms_revisions", ["record_type", "record_id", "created_at"], name: "index_cms_revisions_on_rtype_and_rid_and_created_at", using: :btree
 
   create_table "comfy_cms_sites", force: :cascade do |t|
     t.string  "label",                       null: false
@@ -120,10 +112,9 @@ ActiveRecord::Schema.define(version: 20170420130006) do
     t.string  "path"
     t.string  "locale",      default: "en",  null: false
     t.boolean "is_mirrored", default: false, null: false
+    t.index ["hostname"], name: "index_comfy_cms_sites_on_hostname", using: :btree
+    t.index ["is_mirrored"], name: "index_comfy_cms_sites_on_is_mirrored", using: :btree
   end
-
-  add_index "comfy_cms_sites", ["hostname"], name: "index_comfy_cms_sites_on_hostname", using: :btree
-  add_index "comfy_cms_sites", ["is_mirrored"], name: "index_comfy_cms_sites_on_is_mirrored", using: :btree
 
   create_table "comfy_cms_snippets", force: :cascade do |t|
     t.integer  "site_id",                    null: false
@@ -134,9 +125,8 @@ ActiveRecord::Schema.define(version: 20170420130006) do
     t.boolean  "is_shared",  default: false, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.index ["site_id", "identifier"], name: "index_comfy_cms_snippets_on_site_id_and_identifier", unique: true, using: :btree
+    t.index ["site_id", "position"], name: "index_comfy_cms_snippets_on_site_id_and_position", using: :btree
   end
-
-  add_index "comfy_cms_snippets", ["site_id", "identifier"], name: "index_comfy_cms_snippets_on_site_id_and_identifier", unique: true, using: :btree
-  add_index "comfy_cms_snippets", ["site_id", "position"], name: "index_comfy_cms_snippets_on_site_id_and_position", using: :btree
 
 end
