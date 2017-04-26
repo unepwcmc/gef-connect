@@ -35,7 +35,7 @@ We include everything by default.  To slim your CSS, remove components you don't
 @include foundation-typography;
 @include foundation-button;
 // @include foundation-forms;
-// @include foundation-visibility-classes;
+@include foundation-visibility-classes;
 // @include foundation-float-classes;
 // @include foundation-accordion;
 // @include foundation-accordion-menu;

@@ -1,16 +1,67 @@
 <footer class="footer">
-  <div class="row">
-    <div class="small-12 medium-offset-1 medium-5 columns">
-      LOGO LOGO LOGO
+  <div class="row footer__logos">
+    <div class="small-12 medium-6 columns">
+      <div class="footer__logo-wrapper">
+        <h4>Lorem ipsum</h4>
+        <%= link_to 'https://www.thegef.org/', title: 'Visit the Global Environment Facility website' do %>
+          <%= image_tag 'logos/logo-gef.svg', alt: 'GEF logo', class: 'footer__logo' %>
+        <% end %>
+      </div>
+
+      <div class="footer__logo-wrapper">
+        <h4>Lorem ipsum</h4>
+        <%= link_to 'http://web.unep.org/', title: 'Visit the UN Environment website' do %>
+          <%= image_tag 'https://s3.amazonaws.com/wcmc.logo/UN-Environment-+logo+2017.svg ', alt: 'UN Environment logo', class: 'footer__logo' %>
+        <% end %>
+      </div>
+      
+      <div class="footer__logo-wrapper">
+        <h4>Lorem ipsum</h4>
+        <%= link_to 'https://www.unep-wcmc.org/', title: 'Visit the UN Environment World Conservation Monitoring Centre website' do %>
+          <%= image_tag 'https://s3.amazonaws.com/wcmc.logo/UN-Environment-WCMC+logo+2017.svg', alt: 'UN Environment World Conservation Monitoring Centre logo', class: 'footer__logo' %>
+        <% end %>
+      </div>
     </div>
-    <div class="small-12 medium-5 columns">
-      FLAG FLAG FLAG
+
+    <div class="small-12 medium-6 columns">
+      <div class="inline-block">
+        <h4>Lorem ipsum</h4>
+        <div>
+          <%= link_to '/', title: '', class: 'icon--flag-link' do %>
+            <%= image_tag 'icons/flag-ghana.svg', class: 'icon--flag', alt: 'The Ghana flag' %>
+          <% end %>
+        
+          <%= link_to '/', title: '', class: 'icon--flag-link' do %>
+            <%= image_tag 'icons/flag-mozambique.svg', class: 'icon--flag', alt: 'The Mozambique flag' %>
+          <% end %>
+
+          <%= link_to '/', title: '', class: 'icon--flag-link' do %>
+            <%= image_tag 'icons/flag-uganda.svg', class: 'icon--flag', alt: 'The Uganda flag' %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer__contact bg--grey">
+    <div class="row column">
+      <%= link_to '/', class: 'footer__contact-link' do %>
+        <%= image_tag 'logos/logo-gef-connect.svg', alt: 'GEF Connect logo' %>
+      <% end %>
+      
+      <span class="footer__contact-copy">
+        <i class="fa fa-envelope" aria-hidden="true"></i>Contact us at <%= link_to 'connect@unep-wcmc.org', 'mailto:connect@unep-wcmc.org', title: 'Send an email to GEF Connect' %>
+      </span>
+
+      <%= link_to '/', class: 'footer__contact-link show-for-medium' do %>
+        <%= image_tag 'logos/logo-gef-connect-symbol.svg', alt: 'GEF Connect symbol', class: 'footer__contact--right' %>
+      <% end %>
     </div>
   </div>
   
-  <div class="bg__grey">
+  <div class="footer__copyright">
     <div class="row column">
-      LOGO
+      <span>&copy; 2017 Connect. All rights reserved.</span>
     </div>
   </div>
 </footer>

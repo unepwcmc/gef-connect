@@ -56,8 +56,8 @@ $foundation-palette: (
   warning: #ffae00,
   alert: #cc4b37,
 );
-$light-gray: #efefef;
-$medium-gray: #cacaca;
+$light-gray: #F9FAFA;
+$medium-gray: #838D91;
 $dark-gray: #3E4E54;
 $black: #0a0a0a;
 $white: #fefefe;
@@ -116,25 +116,25 @@ $header-styles: (
     'h1': ('font-size': 24),
     'h2': ('font-size': 20),
     'h3': ('font-size': 19),
-    'h4': ('font-size': 18),
-    'h5': ('font-size': 17),
-    'h6': ('font-size': 16),
+    'h4': ('font-size': 15),
+    'h5': ('font-size': 15),
+    'h6': ('font-size': 15),
   ),
   medium: (
     'h1': ('font-size': 40),
     'h2': ('font-size': 32),
     'h3': ('font-size': 23),
-    'h4': ('font-size': 25),
-    'h5': ('font-size': 20),
-    'h6': ('font-size': 16),
+    'h4': ('font-size': 15),
+    'h5': ('font-size': 15),
+    'h6': ('font-size': 15),
   ),
   large: (
     'h1': ('font-size': 47),
     'h2': ('font-size': 37),
     'h3': ('font-size': 26),
-    'h4': ('font-size': 25),
-    'h5': ('font-size': 20),
-    'h6': ('font-size': 16),
+    'h4': ('font-size': 15),
+    'h5': ('font-size': 15),
+    'h6': ('font-size': 15),
   ),
 );
 $header-text-rendering: optimizeLegibility;
