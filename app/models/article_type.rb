@@ -1,2 +1,2 @@
-class ArticleType < ActiveRecord::Base
+class ArticleType < ApplicationRecord
 end
