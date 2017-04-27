@@ -1,5 +1,5 @@
 <%# set variables for view %>
-<% @article_types = get_article_types %>
+<% @article_types = ArticleType.all %>
 <% @articles = @cms_page.children.published %>
 
 <div class="row">
