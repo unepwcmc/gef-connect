@@ -19,7 +19,8 @@
 //= require foundation.util.mediaQuery.js
 //= require foundation.responsiveMenu.js
 //= require foundation.responsiveToggle.js
-//= require_tree .
+//= require_tree ./utilities
+//= require_tree ./components
 
 $(function(){ 
   $(document).foundation();

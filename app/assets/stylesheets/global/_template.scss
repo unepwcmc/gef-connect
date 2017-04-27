@@ -1,9 +1,17 @@
 .template {
   &-padding {
-    padding: rem-calc(24 0 30 0);
+    padding-top: rem-calc(24);
+    padding-bottom: rem-calc(30);
 
-    @include breakpoint(medium){ padding: rem-calc(40 0 50 0); }
-    @include breakpoint(large){ padding: rem-calc(58 0 95 0); }
+    @include breakpoint(medium){ 
+      padding-top: rem-calc(40);
+      padding-bottom: rem-calc(50);
+    }
+
+    @include breakpoint(large){ 
+      padding-top: rem-calc(58);
+      padding-bottom: rem-calc(95);
+    }
   }
 
   &--home {

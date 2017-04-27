@@ -57,9 +57,9 @@ $foundation-palette: (
   alert: #cc4b37,
 );
 $light-gray: #F9FAFA;
-$medium-gray: #838D91;
-$dark-gray: #3E4E54;
-$black: #0a0a0a;
+$medium-gray: darken($light-gray, 5%);
+$dark-gray: #838D91;
+$black: #3E4E54;
 $white: #fefefe;
 $body-background: $white;
 $body-font-color: #222222;

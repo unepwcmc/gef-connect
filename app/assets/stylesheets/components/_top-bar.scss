@@ -25,7 +25,7 @@
 // top-bar
 //--------------------------------------------------------------------------------
 .top-bar {
-  border-bottom: solid rem-calc(1) darken($light-gray, 5%);
+  border-bottom: solid rem-calc(1) $medium-gray;;
   
   &__bar {
     padding: 0;

@@ -47,8 +47,8 @@ section {
 // headings
 //--------------------------------------------------------------------------------
 h4 {
-    border-bottom: solid rem-calc(1) darken($light-gray, 5%);
-    color: $medium-gray;
+    border-bottom: solid rem-calc(1) $medium-gray;;
+    color: $dark-gray;
     font-style: italic;
     font-weight: normal;
     margin-bottom: rem-calc(14);

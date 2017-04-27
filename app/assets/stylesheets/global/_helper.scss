@@ -13,6 +13,8 @@
 // display
 //--------------------------------------------------------------------------------
 .inline-block { display: inline-block; }
+[v-cloak] { display: none; } //this class will be removed by vue once the component has finised rendering
+
 //--------------------------------------------------------------------------------
 // text
 //--------------------------------------------------------------------------------
@@ -35,7 +37,7 @@
   @include breakpoint(large){ font-size: rem-calc(18); }
 }
 
-.text--grey-dark { color: $dark-gray; }
+.text--grey-dark { color: $black; }
 
 .text--number {
   background-color: $secondary-color;
