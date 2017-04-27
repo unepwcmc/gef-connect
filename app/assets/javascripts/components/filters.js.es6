@@ -34,15 +34,12 @@ Vue.component('filters', {
     },
 
     filterList: function(){
-      checkboxes = this.$children;
+      var checkboxes = this.$children;
       if(checkboxes.length != 0){
-        // console.log(categories);
-
+        
         checkboxes.forEach(checkbox => {
 
-          // console.log(category.name);
-
-          newCategory = {
+          var newCategory = {
             name: checkbox.name,
             isActive: true
           };
@@ -51,20 +48,8 @@ Vue.component('filters', {
           
         });
       }
-
-      // console.log(this.categories);
     }
   },
-
-
-  // mounted: function(){
-  //   $.ajax({
-  //     url:'/filters.json',
-  //     success: function(res){
-  //       this.filters = res
-  //     }
-  //   });
-  // }
 
   created(){
     
@@ -144,9 +129,11 @@ Vue.component('article-listing', {
   }
 });
 
-//declare new Vue instance
-if($('#app').length > 0){
+//Add event listener so that vue works with turbolinks
+//Check for tabs on the page before adding Vue instance
+var element = document.getElementById("app");
+if (element != null) {
   new Vue({
-    el: '#app'
+    el: '#app',
   });  
 }

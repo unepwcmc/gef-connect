@@ -1,8 +1,10 @@
-# GEF Connect (Global Environment Facility)
+# GEF Connect (01704)
 
 ## Notes
 
 ### Intro
+
+GEF = Global Environment Facility
 
 Simple brochure website built on Comfortable Mexian Sofa. It has a news section with live filtering and pagination. Social sharing is present on every article page.
 
@@ -41,3 +43,9 @@ bundle install
 npm install
 rails db:create && db:migrate
 ```
+
+## Hosted sites
+
+###Staging
+
+<http://gef-connect.web-staging.linode.unep-wcmc.org/>

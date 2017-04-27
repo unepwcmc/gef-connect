@@ -264,7 +264,7 @@ PLATFORMS
 
 DEPENDENCIES
   appsignal
-  browserify-rails
+  browserify-rails (~> 4.1.0)
   byebug
   capistrano (~> 3.6)
   capistrano-bundler (~> 1.1)

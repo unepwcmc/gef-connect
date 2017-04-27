@@ -53,8 +53,11 @@ Vue.component('tab', {
   }
 });
 
-if($('#vue-tabs').length > 0){
+//Add event listener so that vue works with turbolinks
+//Check for tabs on the page before adding Vue instance
+var element = document.getElementById("vue-tabs");
+if (element != null) {
   new Vue({
-    el: '#vue-tabs'
+    el: '#vue-tabs',
   });  
 }
