@@ -2,30 +2,53 @@
 // helper classes
 //--------------------------------------------------------------------------------
 // - backgrounds
+// - display
 // - text
-//--------------------------------------------------------------------------------
-
-
 //--------------------------------------------------------------------------------
 // backgrounds
 //--------------------------------------------------------------------------------
-.bg__grey {
-  background-color: $light-gray;
-}
+.bg--grey { background-color: $light-gray; }
 
+//--------------------------------------------------------------------------------
+// display
+//--------------------------------------------------------------------------------
+.inline-block { display: inline-block; }
 //--------------------------------------------------------------------------------
 // text
 //--------------------------------------------------------------------------------
-.text__number {
+.text--fira-sans { font-family: $fira-sans; }
+.text--lato { font-family: $lato; }
+
+.text--light { font-weight: $light; }
+
+.text--large { 
+  font-size: rem-calc(19);
+
+  @include breakpoint(medium){ font-size: rem-calc(24); }
+  @include breakpoint(large){ font-size: rem-calc(26); }
+}
+
+.text--18 { 
+  font-size: rem-calc(16); 
+  
+  @include breakpoint(medium){ font-size: rem-calc(17); }
+  @include breakpoint(large){ font-size: rem-calc(18); }
+}
+
+.text--grey-dark { color: $dark-gray; }
+
+.text--number {
   background-color: $secondary-color;
   border-radius: 100%;
   color: $white;
-  font-size: rem-calc(20);
+  font-size: rem-calc(26);
   font-style: italic;
-  font-weight: bold;
+  font-weight: $semi-bold;
+  line-height: rem-calc(45);
   margin-right: rem-calc(12);
   text-align: center;
-  width: rem-calc(30); height: rem-calc(30);
+  width: rem-calc(45); height: rem-calc(45);
 
   display: inline-block;
 }
+

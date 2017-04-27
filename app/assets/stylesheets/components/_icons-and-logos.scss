@@ -1,0 +1,37 @@
+//--------------------------------------------------------------------------------
+// icons
+//--------------------------------------------------------------------------------
+.icon-wrapper { margin-top: rem-calc(40); }
+
+.icon {
+  &--flag-link {
+    margin-left: rem-calc(13);
+    
+    @include breakpoint(large){
+      margin-left: rem-calc(30);
+    }
+
+    &:first-child { margin: 0; }
+
+    .footer__logos & {
+      @include breakpoint(large){
+        margin-left: rem-calc(60);  
+
+        &:first-child { margin: 0; }
+      }
+    }
+  }
+
+  &--flag {
+    width: 29%;
+    max-width: rem-calc(90);
+
+    .footer__logos & {
+      @include breakpoint(medium){
+        width: 7.5vw;  
+
+        &:first-child { margin: 0; }
+      }
+    }
+  }
+}

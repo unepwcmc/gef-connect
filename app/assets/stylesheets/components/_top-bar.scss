@@ -1,0 +1,82 @@
+//--------------------------------------------------------------------------------
+// top bar and navigation
+//--------------------------------------------------------------------------------
+// - prevent FOUC
+// - top bar
+// - nav
+//--------------------------------------------------------------------------------
+// prevent FOUC
+//--------------------------------------------------------------------------------
+.no-js .top-bar {
+  display: none;
+}
+
+@media screen and (min-width: 40em) {
+  .no-js .top-bar {
+    display: block;
+  }
+
+  .no-js .title-bar {
+    display: none;
+  }
+}
+
+//--------------------------------------------------------------------------------
+// top-bar
+//--------------------------------------------------------------------------------
+.top-bar {
+  &__bar {
+    padding: 0;
+    width: 100%;
+
+    position: relative;
+
+    @include breakpoint(medium){ display: inline; }
+  }
+
+    &__logo {
+      @include breakpoint(small only) {
+        height: rem-calc(50);
+      }
+    }
+
+    &__burger-wrapper {
+      @include vertical-center;
+
+      right: rem-calc(16);
+    }
+
+      &__burger {
+        //@include hamburger($color, $color-hover, $width, $height, $weight, $bars);
+        @include hamburger($primary-color, $black, rem-calc(26), rem-calc(21), rem-calc(3));
+      }
+}
+
+//--------------------------------------------------------------------------------
+// nav
+//--------------------------------------------------------------------------------
+.nav {
+  @include breakpoint(medium){
+    padding: rem-calc(18 15 18 0);
+  }
+
+  &__a {
+    @include breakpoint(small only){
+      background-color: $white;
+      border-top: solid $light-gray rem-calc(1);
+      margin: 0;
+      padding: rem-calc(14);
+
+      display: block;
+    }
+
+    color: $body-font-color;
+    font-family: $fira-sans;
+    margin: rem-calc(0 15);
+
+    &.active {
+      color: $primary-color;
+      font-weight: $semi-bold;
+    }
+  }
+}

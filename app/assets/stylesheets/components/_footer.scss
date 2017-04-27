@@ -1,3 +1,91 @@
+//--------------------------------------------------------------------------------
+// footer
+//--------------------------------------------------------------------------------
 .footer {
-  
+  border-top: solid rem-calc(1) darken($light-gray, 5%);
+
+  &__logos {
+    padding-top: rem-calc(24);
+    padding-bottom: rem-calc(24); 
+    text-align: center;
+
+    @include breakpoint(medium){
+      padding-top: rem-calc(44);
+      padding-bottom: rem-calc(44);
+      text-align: left;      
+    }
+  }
+
+    &__logo-wrapper {
+      margin: rem-calc(0 0 40 15);
+      display: inline-block;
+
+      @include breakpoint(large){
+        margin: rem-calc(0 0 0 60);
+      }
+
+      &:first-child {
+        margin: 0;
+      }
+    }
+      &__logo {
+        height: rem-calc(44);
+
+        @include breakpoint(medium){
+          height: 5vw;
+          max-height: rem-calc(60);
+        }
+
+        @include breakpoint(large){
+          height: rem-calc(60);
+        }
+      }
+
+  &__contact {
+    padding-top: rem-calc(24);
+    padding-bottom: rem-calc(24);
+    text-align: center;
+
+    @include breakpoint(medium){
+      text-align: left;
+    }
+
+    @include breakpoint(large){
+      padding-top: rem-calc(44);
+      padding-bottom: rem-calc(44);
+    }
+
+    &-link,
+    &-copy {
+      @include breakpoint(small only){
+        margin: rem-calc(10 0);
+        display: block;  
+      }
+    }
+
+    &-copy {
+      
+      color: $dark-gray;
+
+      @include breakpoint(medium){
+        margin-left: rem-calc(36);
+      }
+
+      i { margin-right: rem-calc(7); }
+    }
+
+    &--right {
+      float: right;
+    }
+  }
+
+  &__copyright {
+    @include breakpoint(small only){
+      text-align: center;
+    }
+
+    background-color: darken($light-gray, 5%);
+    padding-top: rem-calc(20);
+    padding-bottom: rem-calc(20);
+  }  
 }

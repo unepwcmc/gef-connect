@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   comfy_route :cms_admin, :path => '/admin'
 
-  get 'filters' => 'article_types'
+  root :to => "comfy/cms/content#show"
 
   # Make sure this routeset is defined last
   comfy_route :cms, :path => '/', :sitemap => false
