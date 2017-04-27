@@ -1,0 +1,51 @@
+//--------------------------------------------------------------------------------
+// tabs
+//--------------------------------------------------------------------------------
+// The tabs component has a different layout for each breakpoint
+//
+// Small
+// The tab titles are in a drop down menu and the tab content appears below.
+//
+// Medium
+// The tab titles are laid out horizontally and the content appears below.
+//
+// Large
+// The tab titles are laid out vertically on the left hand side of the page and 
+// the content appears on the right hand side.
+//--------------------------------------------------------------------------------
+.tabs {
+  @include breakpoint(medium){
+    border-top: solid rem-calc(1) darken($light-gray, 5%);
+    padding-top: rem-calc(35);
+  }
+}
+
+.tab {
+  &-titles {
+    margin-left: 0;
+  }
+    &--title {
+      cursor: pointer;
+      padding: rem-calc(10);
+
+      @include breakpoint(medium){
+        display: inline-block;
+      }
+
+      @include breakpoint(large){
+        border-bottom: solid rem-calc(1) darken($light-gray, 5%);
+        padding: rem-calc(10 0);
+
+        display: block;
+      }
+
+      &.active {
+        color: $primary-color;
+        font-weight: $semi-bold;
+      }
+    }
+
+  &--content {
+
+  }
+}
