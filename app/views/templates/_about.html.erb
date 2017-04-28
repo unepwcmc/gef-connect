@@ -1,8 +1,12 @@
+<% content_for :title do %>
+  <%= @cms_page.label %>
+<% end %>
+
 <div class="template template-padding site-padding">
   <div class="row column">
     <h1><%= @cms_page.label %></h1>  
   </div>
-
+  
   <div id="vue-tabs" v-cloak>
     <tabs class="tabs">
       <tab selected="true" name="<%= cms_block_content('tab-1-title') %>">
