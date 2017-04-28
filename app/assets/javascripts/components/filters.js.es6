@@ -1,65 +1,55 @@
-var store = {
-  state: {
-    categories: []
-  }
-};
+//--------------------------------------------------------------------------------
+// EventBus listener
+//--------------------------------------------------------------------------------
+window.EventBus = new Vue();
 
 //--------------------------------------------------------------------------------
 // filters
 //--------------------------------------------------------------------------------
 Vue.component('filters', {
-
   template: `
-    <div>
+    <div class="filters">
+      <span class="text--bold">Type of content:</span>
       <slot></slot>
     </div>
   `,
 
   data() {
     return {
-      categories: [],
-      articles: []
+      categories: []
     }
   },
 
   methods: {
-    filterArticles: function(){
-      console.log('filter articles');
-
-      console.log(this.categories);
-      console.log(this.articles);
-
-      this.categories.forEach(category => {
-        console.log(category.name);
-        
-      });
-      
+    //update the active category array then emit the changes
+    updateCategories:function(category){
+      this.updateCategoryList();
+      EventBus.$emit('filtersChanged', this.categories);
     },
 
-    filterList: function(){
+    //update the active category array
+    updateCategoryList: function(){
       var checkboxes = this.$children;
+
       if(checkboxes.length != 0){
         
+        this.categories = [];
+
         checkboxes.forEach(checkbox => {
 
-          var newCategory = {
-            name: checkbox.name,
-            isActive: true
-          };
-
-          this.categories.push(newCategory);
+          if(checkbox.isActive){
+            this.categories.push(checkbox.name);
+          }
           
         });
       }
     }
   },
 
-  created(){
-    
-  }, 
-
   mounted(){
-    this.filterList();
+    this.updateCategoryList();
+
+    EventBus.$on('categoriesChanged', this.updateCategories);
   }
 });
 
@@ -84,8 +74,10 @@ Vue.component('checkbox', {
   },
 
   methods: {
+    //update the isActive property for the checkbox and emit the change
     clickCheckbox: function(){
       this.isActive = !this.isActive;
+      EventBus.$emit('categoriesChanged');
     }
   }
 });
@@ -93,7 +85,7 @@ Vue.component('checkbox', {
 //--------------------------------------------------------------------------------
 // articles
 //--------------------------------------------------------------------------------
-Vue.component('articles', {
+var test = Vue.component('articles', {
   template:`
     <div class="row small-up-1 medium-up-2 large-up-3 articles">
       <slot></slot>
@@ -101,9 +93,10 @@ Vue.component('articles', {
   `,
 
   methods: {
-    filterArticles: function(){
+    //loop through each article and update the isActive property against the new active category array
+    filterArticles: function(categories){
       this.articles.forEach(article => {
-        console.log(article.category);
+        article.isActive = categories.includes(article.category);
       });
     }
   },
@@ -116,7 +109,9 @@ Vue.component('articles', {
 
   mounted(){
     this.articles = this.$children;
-    this.filterArticles();
+
+    //refilter the articles when the filters change
+    EventBus.$on('filtersChanged', this.filterArticles);
   }
 });
 
@@ -148,6 +143,6 @@ Vue.component('article-listing', {
 var element = document.getElementById("articles");
 if (element != null) {
   new Vue({
-    el: '#articles',
-  });  
+    el: '#articles'
+  });
 }

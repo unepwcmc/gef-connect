@@ -17,16 +17,14 @@
   </div>
 
   <div id="articles">
-    <filters>
+    
 
       <div class="row column">
-        <div class="filters">
-          <span class="text--bold">Type of content:</span>
-          
+        <filters> 
           <% @article_types.each do |type| %>
               <checkbox name='<%= type.name %>'></checkbox>
           <% end %>
-        </div>
+        </filters>
       </div>
       
       <% if @articles.any? %>
@@ -72,6 +70,6 @@
         </articles>
       <% end %>
 
-    </filters>
+    
   </div>  
 </div>
