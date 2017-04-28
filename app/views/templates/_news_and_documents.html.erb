@@ -6,48 +6,72 @@
 <% @article_types = ArticleType.all %>
 <% @articles = @cms_page.children.published %>
 
-<div class="row">
-  <div class="small-12 columns">
-    <h1>News and Documents</h1>
-  </div>
-  <div class="small-12 medium-10 large-8 columns end">
-    <p>Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum</p>
-  </div>
-</div>
-
-<div id="app">
-
-  <div class="row column">
-    <div>
-      <filters>
-        <% @article_types.each do |type| %>
-            <checkbox name='<%= type.name %>' ref='checkbox'></checkbox>
-        <% end %>
-
-        <% if @articles.any? %>
-          <articles>
-
-            <% @articles.each do |article| %>
-
-              <article-listing category="<%= cms_block_content(:article_type, article) %>" ref="article">
-                <h3><%= link_to article.label, article.url(:relative) %></h3>
-
-                <% unless cms_block_content(:image, article).to_s.strip.empty? %>
-                  <%= image_tag cms_block_content(:image, article).file.url(:small), alt: article.label %>
-                <% end %>
-
-                <div>
-                  <%= cms_block_content(:introduction, article) %>
-                </div>
-              </article-listing>
-
-            <% end %>
-
-          </articles>
-        <% end %>
-
-      </filters>
+<div class="template--news template-padding site-padding">
+  <div class="row">
+    <div class="small-12 columns">
+      <h1>News and Documents</h1>
+    </div>
+    <div class="small-12 medium-10 large-8 columns end text--18 text--fira-sans">
+      <p>Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum</p>
     </div>
   </div>
 
+  <div id="articles">
+    <filters>
+
+      <div class="row column">
+        <div class="filters">
+          <span class="text--bold">Type of content:</span>
+          
+          <% @article_types.each do |type| %>
+              <checkbox name='<%= type.name %>'></checkbox>
+          <% end %>
+        </div>
+      </div>
+      
+      <% if @articles.any? %>
+        <articles>
+
+          <% @articles.each do |article| %>
+
+            <% category = cms_block_content(:article_type, article) %>
+            <% url = article.url(:relative) %>
+
+            <article-listing category="<%= cms_block_content(:article_type, article) %>">
+              <div class="row">
+                <div class="small-6 columns">
+                  <span class="article__date"><%= article.created_at.strftime('%d %B %Y') %></span>
+                </div>
+                <div class="small-6 columns">
+                  <% unless category.empty? %>
+                    <span class="article__category"><%= category %></span>
+                  <% end %>
+                </div>
+              </div>
+
+              <%= link_to url do %>
+                <h3><%= article.label %></h3>
+
+                <% unless cms_block_content(:image, article).to_s.strip.empty? %>
+                  <%= image_tag cms_block_content(:image, article).file.url(:thumbnail), alt: article.label %>
+                <% end %>
+
+              <% end %>
+              
+              <% unless cms_block_content(:introduction, article).to_s.strip.empty? %>
+                <div class="article__intro">
+                  <%= cms_block_content(:introduction, article) %>
+                </div>
+              <% end %>
+
+              <%= link_to 'Read more', url, title: article.label, class: 'article__read-more' %>
+            </article-listing>
+
+          <% end %>
+
+        </articles>
+      <% end %>
+
+    </filters>
+  </div>  
 </div>

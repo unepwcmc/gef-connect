@@ -4,6 +4,9 @@ var store = {
   }
 };
 
+//--------------------------------------------------------------------------------
+// filters
+//--------------------------------------------------------------------------------
 Vue.component('filters', {
 
   template: `
@@ -60,15 +63,18 @@ Vue.component('filters', {
   }
 });
 
+//--------------------------------------------------------------------------------
+// checkbox
+//--------------------------------------------------------------------------------
 Vue.component('checkbox', {
   props: {
     name: { required: true },
   },
 
   template: `
-    <p class="filters__checkbox" :class="{ 'active' : isActive }" @click='clickCheckbox'>
+    <span class="filters__checkbox" :class="{ 'active' : isActive }" @click='clickCheckbox'>
       {{ name }}
-    </p>
+    </span>
   `,
 
   data(){
@@ -84,9 +90,12 @@ Vue.component('checkbox', {
   }
 });
 
+//--------------------------------------------------------------------------------
+// articles
+//--------------------------------------------------------------------------------
 Vue.component('articles', {
   template:`
-    <div class="articles">
+    <div class="row small-up-1 medium-up-2 large-up-3 articles">
       <slot></slot>
     </div>
   `,
@@ -111,13 +120,16 @@ Vue.component('articles', {
   }
 });
 
+//--------------------------------------------------------------------------------
+// article
+//--------------------------------------------------------------------------------
 Vue.component('article-listing', {
   props: {
     category: { required: true }
   },
 
   template:`
-    <div class="listing" :category="category" v-show="isActive">
+    <div class="article column" :category="category" v-show="isActive">
       <slot></slot>
     </div>
   `,
@@ -129,11 +141,13 @@ Vue.component('article-listing', {
   }
 });
 
-//Add event listener so that vue works with turbolinks
+//--------------------------------------------------------------------------------
+// Vue instance
+//--------------------------------------------------------------------------------
 //Check for tabs on the page before adding Vue instance
-var element = document.getElementById("app");
+var element = document.getElementById("articles");
 if (element != null) {
   new Vue({
-    el: '#app',
+    el: '#articles',
   });  
 }
