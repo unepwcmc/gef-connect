@@ -97,8 +97,10 @@ ComfortableMexicanSofa.configure do |config|
   # Default is false.
   #   config.reveal_cms_partials = false
 
-  #Create thumbnails of all images uploaded to the CMS
-  config.upload_file_options[:styles] = { small: '300x200#', large: '600x400#'}
+  # Create thumbnails of all images uploaded to the CMS
+  # - thumbnail dimensions were calculated at their largest at the top end of the small breakpoint
+  # - large dimensions were calculated at thier largest at the top end of the medium breakpoint
+  config.upload_file_options[:styles] = { thumbnail: '683x260#', large: '970x366#'}
 
 end
 
