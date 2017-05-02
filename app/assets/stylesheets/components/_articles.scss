@@ -1,0 +1,59 @@
+//--------------------------------------------------------------------------------
+// articles
+//--------------------------------------------------------------------------------
+// The articles are on the following pages
+// - home
+// - news and events
+//
+// The HTML for the articles is in
+// - _news_and_documents.html.erb
+// - filters.js.es6
+//--------------------------------------------------------------------------------
+.articles { 
+}
+
+.article {
+  margin-bottom: rem-calc(20);
+
+  @include breakpoint(medium){
+    margin-bottom: rem-calc(28);   
+  }
+
+    &__date {
+      color: #53B250;
+      font-style: italic;
+    }
+
+    &__category {
+      background-color: $light-gray;
+      font-style: italic;
+      font-weight: $light;
+      padding: rem-calc(6 14);
+      
+      float: right;
+    }
+
+    &__intro {
+      margin-top: rem-calc(8);
+    }
+
+    &__read-more {
+      color: $primary-color;
+      font-style: italic;
+      font-weight: $medium;
+      margin-top: rem-calc(16);
+      padding-right: rem-calc(22);
+
+      float: right;
+      position: relative;
+
+      &:after {
+        content: '\f138';
+        font-family: $font-awesome;
+        font-style: normal;
+
+        position: absolute;
+        right: 0;
+      }  
+    }
+}

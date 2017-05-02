@@ -22,6 +22,7 @@
 .text--lato { font-family: $lato; }
 
 .text--light { font-weight: $light; }
+.text--bold { font-weight: $global-weight-bold; }
 
 .text--large { 
   font-size: rem-calc(19);
