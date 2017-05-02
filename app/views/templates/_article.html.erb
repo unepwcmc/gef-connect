@@ -4,10 +4,24 @@
 
 <div class="row column">
   <h1><%= @cms_page.label %></h1>
-  
+
   <div>
   <%= cms_block_content(:introduction) %>
   </div>
 
   <%= image_tag cms_block_content(:image).file.url(:large), alt: @cms_page.label %>
+
+
+  <div class="links">
+    <% file_1_label = cms_block_content(:file_1_label)  || "Read/Download" %>
+    <% url_1_label  = cms_block_content(:url_1_label)   || "Read/Download" %>
+
+    <% if cms_block_content(:file_1)&.file&.present? %>
+      <p><a href="<%= cms_block_content(:file_1).file.url %>" target="_blank"><%= file_1_label %></a></p>
+    <% end %>
+
+    <% if cms_block_content(:url_1).present? %>
+      <p><a href="<%= cms_block_content(:url_1) %>" target="_blank"><%= url_1_label %></a></p>
+    <% end %>
+  </div>
 </div>
