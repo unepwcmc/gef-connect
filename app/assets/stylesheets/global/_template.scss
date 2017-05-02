@@ -1,0 +1,32 @@
+.template {
+  &-padding {
+    padding-top: rem-calc(24);
+    padding-bottom: rem-calc(30);
+
+    @include breakpoint(medium){ 
+      padding-top: rem-calc(40);
+      padding-bottom: rem-calc(50);
+    }
+
+    @include breakpoint(large){ 
+      padding-top: rem-calc(58);
+      padding-bottom: rem-calc(95);
+    }
+  }
+
+  &--home {
+    h2 {
+      font-size: rem-calc(20);
+
+      @include breakpoint(medium){ font-size:rem-calc(32); }
+      @include breakpoint(large){ font-size:rem-calc(37); }
+    }
+
+    h3 {
+      font-size: rem-calc(19);
+
+      @include breakpoint(medium){ font-size:rem-calc(23); }
+      @include breakpoint(large){ font-size:rem-calc(26); } 
+    }
+  }
+}

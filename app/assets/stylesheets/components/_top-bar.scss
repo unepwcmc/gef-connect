@@ -25,10 +25,12 @@
 // top-bar
 //--------------------------------------------------------------------------------
 .top-bar {
+  border-bottom: solid rem-calc(1) $medium-gray;;
+  
   &__bar {
     padding: 0;
     width: 100%;
-
+    
     position: relative;
 
     @include breakpoint(medium){ display: inline; }

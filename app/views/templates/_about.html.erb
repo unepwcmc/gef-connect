@@ -2,25 +2,27 @@
   <%= @cms_page.label %>
 <% end %>
 
-<div class="row column">
-  <h1><%= @cms_page.label %></h1>  
-</div>
-
-<div id="vue-tabs">
-  <tabs>
-    <tab selected="true" name="<%= cms_block_content('tab-1-title') %>">
-      <h2><%= cms_block_content('tab-1-title') %></h2>
-      <%= cms_block_content_render('tab-1-content') %>
-    </tab>
-    
-    <tab name="<%= cms_block_content('tab-2-title') %>">
-      <h2><%= cms_block_content('tab-2-title') %></h2>
-      <%= cms_block_content_render('tab-2-content') %>
-    </tab>
-    
-    <tab name="<%= cms_block_content('tab-3-title') %>">
-      <h2><%= cms_block_content('tab-3-title') %></h2>
-      <%= cms_block_content_render('tab-3-content') %>
-    </tab>
-  </tabs>
+<div class="template template-padding site-padding">
+  <div class="row column">
+    <h1><%= @cms_page.label %></h1>  
+  </div>
+  
+  <div id="vue-tabs" v-cloak>
+    <tabs class="tabs">
+      <tab selected="true" name="<%= cms_block_content('tab-1-title') %>">
+        <h2><%= cms_block_content('tab-1-title') %></h2>
+        <%= cms_block_content_render('tab-1-content') %>
+      </tab>
+      
+      <tab name="<%= cms_block_content('tab-2-title') %>">
+        <h2><%= cms_block_content('tab-2-title') %></h2>
+        <%= cms_block_content_render('tab-2-content') %>
+      </tab>
+      
+      <tab name="<%= cms_block_content('tab-3-title') %>">
+        <h2><%= cms_block_content('tab-3-title') %></h2>
+        <%= cms_block_content_render('tab-3-content') %>
+      </tab>
+    </tabs>
+  </div>
 </div>

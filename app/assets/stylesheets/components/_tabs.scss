@@ -1,0 +1,132 @@
+//--------------------------------------------------------------------------------
+// tabs
+//--------------------------------------------------------------------------------
+// The tabs component has a different layout for each breakpoint
+//
+// Small
+// The tab titles are in a drop down menu and the tab content appears below.
+//
+// Medium
+// The tab titles are laid out horizontally and the content appears below.
+//
+// Large
+// The tab titles are laid out vertically on the left hand side of the page and 
+// the content appears on the right hand side.
+//--------------------------------------------------------------------------------
+.tabs {
+  @include breakpoint(medium){
+    padding-top: rem-calc(35);
+  }
+
+  @include breakpoint(large){
+    border-top: solid rem-calc(1) $medium-gray;;
+  }
+  
+  &__dropdown {
+    position: relative; 
+
+    &-title {
+      font-weight: $global-weight-bold;
+      margin-bottom: rem-calc(6);
+    }
+
+    &-button {
+      border: solid rem-calc(1) $medium-gray;;
+      cursor: pointer;
+      margin-top: rem-calc(6);
+      padding: rem-calc(10);
+
+      position: relative;
+
+      &:after {
+        @include vertical-center;
+        content: '\f107';
+        font-family: $font-awesome;
+
+        position: absolute;
+        right: rem-calc(10);
+      }
+    }
+  }
+}
+
+.tab {
+  &-titles {
+    @include breakpoint(small only){
+      margin-bottom: 0;
+      width: 100%;
+  
+      position: absolute;
+      bottom: 0;
+
+      transform: translateY(100%);
+    }
+    
+    background-color: $white;
+    border: solid rem-calc(1) $medium-gray;;
+    font-family: $fira-sans;
+    margin-left: 0;
+
+    @include breakpoint(medium){
+      border-top: none;
+      border-right: none;
+      border-bottom: solid rem-calc(1) $medium-gray;;
+      border-left: none;
+    }
+
+    @include breakpoint(large){ border-bottom: none; }
+  }
+
+    &--title {
+      border-top: solid rem-calc(1) $medium-gray;;
+      cursor: pointer;
+      list-style: none;
+      padding: rem-calc(10);
+
+      @include breakpoint(medium){
+        border: none;
+        padding: rem-calc(10 14);
+
+        display: inline-block;
+      }
+
+      @include breakpoint(large){
+        border-bottom: solid rem-calc(1) $medium-gray;;
+        padding: rem-calc(10 0);
+
+        display: block;
+      }
+
+      &:first-child {
+        @include breakpoint(small only){ border-top: none; }
+        @include breakpoint(medium only){ padding-left: 0; }
+      }
+
+      &:hover,
+      &:focus {
+        background-color: $primary-color;
+        color: $white;
+
+        @include breakpoint(medium){
+          background-color: initial;
+          color: $primary-color;
+        }
+
+        &.active {
+          color: $white;
+
+          @include breakpoint(medium){ color: $primary-color; }
+        }
+      }
+
+      &.active {
+        color: $primary-color;
+      }
+    }
+
+  &--content {
+    margin-top: rem-calc(18);
+
+    @include breakpoint(large){ margin-top: 0; }
+  }
+}

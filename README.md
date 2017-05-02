@@ -46,6 +46,6 @@ rails db:create && db:migrate
 
 ## Hosted sites
 
-###Staging
+### Staging
 
 <http://gef-connect.web-staging.linode.unep-wcmc.org/>

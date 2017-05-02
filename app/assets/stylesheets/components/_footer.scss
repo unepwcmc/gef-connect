@@ -2,7 +2,7 @@
 // footer
 //--------------------------------------------------------------------------------
 .footer {
-  border-top: solid rem-calc(1) darken($light-gray, 5%);
+  border-top: solid rem-calc(1) $medium-gray;
 
   &__logos {
     padding-top: rem-calc(24);
@@ -65,7 +65,7 @@
 
     &-copy {
       
-      color: $dark-gray;
+      color: $black;
 
       @include breakpoint(medium){
         margin-left: rem-calc(36);
@@ -84,7 +84,7 @@
       text-align: center;
     }
 
-    background-color: darken($light-gray, 5%);
+    background-color: $medium-gray;
     padding-top: rem-calc(20);
     padding-bottom: rem-calc(20);
   }  
