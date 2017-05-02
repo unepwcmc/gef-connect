@@ -2,6 +2,7 @@
   <%= @cms_page.label %>
 <% end %>
 
+<<<<<<< HEAD
 <div class="template--article template-padding site-padding">
   <div class="row">
     <div class="small-12 medium-10 medium-centered large-8 column">
@@ -40,16 +41,16 @@
       <% end %>
 
       <div class="article__buttons">
-        <% unless cms_block_content(:file_1).to_s.strip.empty? %>
-          <% file_label = cms_block_content(:file_1_label).strip.empty? ? cms_block_content(:file_1_label) : 'Download file' %>
+        <% if cms_block_content(:file_1)&.file&.present? %>
+          <% file_1_label = cms_block_content(:file_1_label)  || "Download file" %>
 
-          <%= link_to file_label, cms_block_content(:file_1).file.url, title: file_label, target: '_blank', class: 'button' %>
+          <%= link_to file_1_label, cms_block_content(:file_1).file.url, title: file_1_label, target: '_blank', class: 'button' %>
         <% end %>
 
-        <% unless cms_block_content(:url_1).to_s.strip.empty? %>
-          <% url_label = cms_block_content(:url_1_label).strip.empty? ? cms_block_content(:url_1_label) : 'Visit site' %>
+        <% if cms_block_content(:url_1).present? %>
+          <% url_1_label  = cms_block_content(:url_1_label)   || "Visit site" %>
 
-          <%= link_to url_label, cms_block_content(:url_1), title: url_label, target: '_blank', class: 'button' %>
+          <%= link_to url_1_label, cms_block_content(:url_1), title: url_1_label, target: '_blank', class: 'button' %>
         <% end %>
       </div>
     
