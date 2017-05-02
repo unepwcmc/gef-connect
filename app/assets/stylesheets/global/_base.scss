@@ -46,6 +46,12 @@ section {
 //--------------------------------------------------------------------------------
 // headings
 //--------------------------------------------------------------------------------
+h1 {
+  margin-bottom: rem-calc(18);
+
+  @include breakpoint(medium){ margin-bottom: rem-calc(24); }
+}
+
 h4 {
     border-bottom: solid rem-calc(1) $medium-gray;
     color: $dark-gray;
@@ -63,8 +69,25 @@ h4 {
 //--------------------------------------------------------------------------------
 // buttons
 //--------------------------------------------------------------------------------
-.button {
+%button-text {
   font-family: $fira-sans;
   font-style: italic;
   font-weight: $semi-bold;
+}
+
+.button {
+  @extend %button-text;
+  margin-right: rem-calc(14);
+
+  &--arrow {
+    @extend %button-text;
+
+    color: $primary-color;
+
+    &:before {
+      content: '\f177';
+      font-family: $font-awesome;
+      margin-right: rem-calc(10);
+    }
+  }
 }
