@@ -1,15 +1,57 @@
-.filters__checkbox {
-  cursor: pointer;
-  
-  &:before {
-    border: solid rem-calc(2) grey;
-    content: '';
-    width: rem-calc(16); height: rem-calc(16);
+//--------------------------------------------------------------------------------
+// filters
+//--------------------------------------------------------------------------------
+// The filters are on the following pages
+// - home
+// - news and events
+//
+// The HTML for the filters is in
+// - _news_and_documents.html.erb
+// - filters.js.es6
+//--------------------------------------------------------------------------------
+.filters {
+  border-top: solid rem-calc(1) $medium-gray;
+  border-bottom: solid rem-calc(1) $medium-gray;
+  margin-bottom: rem-calc(20);
+  padding:rem-calc(18 0 6 0);
 
-    display: inline-block;
+  @include breakpoint(medium){ 
+    margin-bottom: rem-calc(38);
+    padding: rem-calc(24 0); 
   }
 
-  &.active:before {
-    background-color: red;
+  &__checkbox {
+    line-height: 1;
+    margin: rem-calc(10 0 14 16);
+    padding-left: rem-calc(8);
+    cursor: pointer;
+    
+    display: block;
+    position: relative;
+    
+    @include breakpoint(medium){
+      margin: rem-calc(0 0 0 50);
+      margin-left: rem-calc(50);
+
+      display: inline-block;
+    }
+  
+    &:before {
+      border: solid rem-calc(1) $primary-color;
+      content: '';
+      width: rem-calc(16); height: rem-calc(16);
+
+      display: block;
+      position: absolute;
+      bottom: rem-calc(-1);
+      left: rem-calc(-16);
+    }
+
+    &.active:before {
+      color: $primary-color;
+      content: '\f00c';
+      font-family: $font-awesome;
+      font-size: rem-calc(15);
+    }
   }
 }

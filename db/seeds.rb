@@ -8,6 +8,5 @@
 
 article_types = ArticleType.create([
   { name: 'Document'},
-  { name: 'Event'},
-  { name: 'News'}
+  { name: 'News story'}
 ]);
