@@ -1,0 +1,69 @@
+<% total_articles = total_articles ||= 6 %>
+
+<% @article_types = ArticleType.all %>
+
+<% news_page = @cms_site.pages.find_by_slug('news-and-documents') %>
+<% unless news_page.to_s.strip.empty? %> 
+  <% @articles = news_page.children.published.limit(total_articles) %>
+<% end %>
+
+<div id="articles">
+  
+  <div class="row column">
+      <filters> 
+        <% @article_types.each do |type| %>
+            <checkbox name='<%= type.name %>'></checkbox>
+        <% end %>
+      </filters>
+    </div>
+    
+    <% if @articles.any? %>
+
+      <articles>
+        <% @articles.each do |article| %>
+
+          <% category = cms_block_content(:article_type, article) %>
+          <% url = article.url(:relative) %>
+
+          <article-listing category="<%= cms_block_content(:article_type, article) %>">
+            <div class="row">
+              <div class="small-6 columns">
+                <span class="article__date"><%= article.created_at.strftime('%d %B %Y') %></span>
+              </div>
+              <div class="small-6 columns">
+                <% unless category.empty? %>
+                  <span class="article__category"><%= category %></span>
+                <% end %>
+              </div>
+            </div>
+
+            <%= link_to url do %>
+              <h3><%= article.label %></h3>
+
+              <% unless cms_block_content(:image, article).to_s.strip.empty? %>
+                <%= image_tag cms_block_content(:image, article).file.url(:thumbnail), alt: article.label %>
+              <% end %>
+
+            <% end %>
+            
+            <% unless cms_block_content(:introduction, article).to_s.strip.empty? %>
+              <div class="article__intro">
+                <%= cms_block_content(:introduction, article) %>
+              </div>
+            <% end %>
+
+            <%= link_to 'Read more', url, title: article.label, class: 'article__read-more' %>
+          </article-listing>
+
+        <% end %>
+      </articles>
+
+    <% else %>
+
+      <p>There are no articles to show.</p>
+
+    <% end %>
+
+  </div>
+</div>
+
