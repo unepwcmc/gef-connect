@@ -29,7 +29,7 @@
         </div>
       <% end %>
       
-      <% unless cms_block_content(:image).to_s.strip.empty? %>
+      <% if cms_block_content(:image)&.file&.present? %>
         <%= image_tag cms_block_content(:image).file.url(:thumbnail), alt: @cms_page.label, class: 'article__image' %>
       <% end %>
 

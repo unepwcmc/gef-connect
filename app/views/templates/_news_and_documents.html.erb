@@ -6,8 +6,6 @@
 <% @article_types = ArticleType.all %>
 <% @articles = @cms_page.children.published.reorder(created_at: :desc) %>
 
-<%= @articles.inspect %>
-
 <div class="template--news template-padding site-padding">
   <div class="row">
     <div class="small-12 columns">
