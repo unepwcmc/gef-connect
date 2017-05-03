@@ -77,7 +77,8 @@ If you'd like to include motion-ui the foundation-rails gem comes prepackaged wi
 */
 
 /* gef connect */
- @import 'global/base';
+ @import 'base/*';
+
  @import 'global/helper';
  @import 'global/template';
 

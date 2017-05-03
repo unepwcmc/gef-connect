@@ -1,0 +1,17 @@
+//--------------------------------------------------------------------------------
+// headings
+//--------------------------------------------------------------------------------
+h1 {
+  margin-bottom: rem-calc(18);
+
+  @include breakpoint(medium){ margin-bottom: rem-calc(24); }
+}
+
+h4 {
+    border-bottom: solid rem-calc(1) $medium-gray;
+    color: $dark-gray;
+    font-style: italic;
+    font-weight: normal;
+    margin-bottom: rem-calc(14);
+    padding-bottom: rem-calc(8);
+  }

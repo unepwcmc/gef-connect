@@ -1,0 +1,75 @@
+//--------------------------------------------------------------------------------
+// lists
+//--------------------------------------------------------------------------------
+// custom lists
+//--------------------------------------------------------------------------------
+// the custom lists class must be added to all divs that wrap content pulled in
+// from rich text areas in the cms
+//--------------------------------------------------------------------------------
+%custom-list {
+  list-style: none;
+  padding: 0;
+  margin: rem-calc(20 0);
+}
+
+.custom-lists {
+  
+  ol {
+    @extend %custom-list;  
+
+    li {
+      counter-increment: step-counter;
+      margin-bottom: rem-calc(16);
+      padding-left: rem-calc(40);
+
+      position: relative;
+
+      @include breakpoint(medium){ padding-left: rem-calc(60); }
+
+      &:before {
+        background-color: $primary-color;
+        border-radius: 100%;
+        color: $white;
+        content: counter(step-counter) '.';
+        font-weight: $global-weight-bold;
+        font-style: italic;
+        line-height: rem-calc(26);
+        text-align: center;
+        width: rem-calc(26); height: rem-calc(26);
+
+        display: inline-block;
+        position: absolute;
+        top: rem-calc(2);
+        left: rem-calc(3);
+
+        @include breakpoint(medium){ left: rem-calc(23); }
+      }
+    }
+  }
+
+  ul {
+    @extend %custom-list;
+
+    li {
+      margin-bottom: rem-calc(16);
+      padding-left: rem-calc(40);
+
+      position: relative;
+
+      @include breakpoint(medium){ padding-left: rem-calc(60); }
+
+      &:before {
+        color: $primary-color;
+        content: '\f111';
+        font-family: $font-awesome;
+        font-size: rem-calc(7);
+
+        position: absolute;
+        top: rem-calc(9);
+        left: rem-calc(15);
+
+        @include breakpoint(medium){ left: rem-calc(35); }
+      }
+    }
+  }
+}

@@ -11,17 +11,26 @@
     <tabs class="tabs">
       <tab selected="true" name="<%= cms_block_content('tab-1-title') %>">
         <h2><%= cms_block_content('tab-1-title') %></h2>
-        <%= cms_block_content_render('tab-1-content') %>
+
+        <div class="custom-lists">
+          <%= cms_block_content_render('tab-1-content') %>
+        </div>
       </tab>
       
       <tab name="<%= cms_block_content('tab-2-title') %>">
         <h2><%= cms_block_content('tab-2-title') %></h2>
-        <%= cms_block_content_render('tab-2-content') %>
+
+        <div class="custom-lists">
+          <%= cms_block_content_render('tab-2-content') %>
+        </div>
       </tab>
       
       <tab name="<%= cms_block_content('tab-3-title') %>">
         <h2><%= cms_block_content('tab-3-title') %></h2>
-        <%= cms_block_content_render('tab-3-content') %>
+
+        <div class="custom-lists">
+          <%= cms_block_content_render('tab-3-content') %>
+        </div>
       </tab>
     </tabs>
   </div>
