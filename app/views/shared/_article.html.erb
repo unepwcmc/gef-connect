@@ -1,0 +1,32 @@
+<% category = cms_block_content(:article_type, article) %>
+<% url      = article.url(:relative) %>
+
+<article-listing category="<%= cms_block_content(:article_type, article) %>">
+  <div class="row">
+    <div class="small-6 columns">
+      <span class="article__date"><%= article.created_at.strftime('%d %B %Y') %></span>
+    </div>
+    <div class="small-6 columns">
+      <% unless category.blank? %>
+        <span class="article__category"><%= category %></span>
+      <% end %>
+    </div>
+  </div>
+
+  <%= link_to url do %>
+    <h3><%= article.label %></h3>
+
+    <% if cms_block_content(:image, article)&.file&.present? %>
+      <%= image_tag cms_block_content(:image, article).file.url(:thumbnail), alt: article.label %>
+    <% end %>
+
+  <% end %>
+
+  <% unless cms_block_content(:introduction, article).blank? %>
+    <div class="article__intro">
+      <%= cms_block_content(:introduction, article) %>
+    </div>
+  <% end %>
+
+  <%= link_to 'Read more', url, title: article.label, class: 'article__read-more' %>
+</article-listing>

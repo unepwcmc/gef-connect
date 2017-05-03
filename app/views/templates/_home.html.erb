@@ -81,7 +81,7 @@
 
   </section>
 
-  <section class="section-padding">
+  <section class="section-padding site-padding">
     <div class="row">
       <div class="small-12 medium-6 large-4 columns">
         <h2>News &amp; Documents</h2>
@@ -89,6 +89,10 @@
       <div class="small-12 medium-6 large-8 columns">
         <%= link_to 'View all News & Documents >', "#{@cms_site.path}/news-and-documents", class: 'button' %>
       </div>
+    </div>
+
+    <div class="row column">
+      <%= render partial: 'shared/articles' %>
     </div>
   </section>
 

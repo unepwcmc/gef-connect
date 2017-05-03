@@ -2,10 +2,6 @@
   <%= @cms_page.label %>
 <% end %>
 
-<%# set variables for view %>
-<% @article_types = ArticleType.all %>
-<% @articles      = @cms_page.children.published.reorder(created_at: :desc) %>
-
 <div class="template--news template-padding site-padding">
   <div class="row">
     <div class="small-12 columns">
@@ -16,60 +12,7 @@
     </div>
   </div>
 
-  <div id="articles">
-
-
-      <div class="row column">
-        <filters>
-          <% @article_types.each do |type| %>
-              <checkbox name='<%= type.name %>'></checkbox>
-          <% end %>
-        </filters>
-      </div>
-
-      <% if @articles.any? %>
-        <articles>
-
-          <% @articles.each do |article| %>
-
-            <% category = cms_block_content(:article_type, article) %>
-            <% url      = article.url(:relative) %>
-
-            <article-listing category="<%= cms_block_content(:article_type, article) %>">
-              <div class="row">
-                <div class="small-6 columns">
-                  <span class="article__date"><%= article.created_at.strftime('%d %B %Y') %></span>
-                </div>
-                <div class="small-6 columns">
-                  <% unless category.empty? %>
-                    <span class="article__category"><%= category %></span>
-                  <% end %>
-                </div>
-              </div>
-
-              <%= link_to url do %>
-                <h3><%= article.label %></h3>
-
-                <% unless cms_block_content(:image, article)&.file&.present? %>
-                  <%= image_tag cms_block_content(:image, article).file.url(:thumbnail), alt: article.label %>
-                <% end %>
-
-              <% end %>
-
-              <% unless cms_block_content(:introduction, article).blank? %>
-                <div class="article__intro">
-                  <%= cms_block_content(:introduction, article) %>
-                </div>
-              <% end %>
-
-              <%= link_to 'Read more', url, title: article.label, class: 'article__read-more' %>
-            </article-listing>
-
-          <% end %>
-
-        </articles>
-      <% end %>
-
+  <%= render partial: 'shared/articles', locals: { total_articles: 9 } %>
 
   </div>
 </div>
