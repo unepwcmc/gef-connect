@@ -25,12 +25,12 @@ Simple brochure website built on Comfortable Mexian Sofa. It has a news section 
 
 ## Browser support
 
-- Most used in Africa (2017) - Chrome and Oracle
+- Most used in Africa (2017) - Chrome and Opera
 
-- Lastest Chrome, Firefox, Safari, Oracle
+- Lastest Chrome, Firefox, Safari, Opera
 - IE 11+
-- iOS..?
-- Android..?
+
+N.B Do not use CSS3 transforms, they are not supported in Opera Mini (02/05/2017) <http://caniuse.com/#search=transforms>
 
 ## Local development
 
