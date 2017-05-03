@@ -1,5 +1,5 @@
 <% category = cms_block_content(:article_type, article) %>
-<% url = article.url(:relative) %>
+<% url      = article.url(:relative) %>
 
 <article-listing category="<%= cms_block_content(:article_type, article) %>">
   <div class="row">
@@ -7,7 +7,7 @@
       <span class="article__date"><%= article.created_at.strftime('%d %B %Y') %></span>
     </div>
     <div class="small-6 columns">
-      <% unless category.empty? %>
+      <% unless category.blank? %>
         <span class="article__category"><%= category %></span>
       <% end %>
     </div>
@@ -22,7 +22,7 @@
 
   <% end %>
 
-  <% unless cms_block_content(:introduction, article).strip.empty? %>
+  <% unless cms_block_content(:introduction, article).blank? %>
     <div class="article__intro">
       <%= cms_block_content(:introduction, article) %>
     </div>
