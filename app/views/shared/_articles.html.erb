@@ -1,0 +1,40 @@
+<% total_articles = total_articles ||= 6 %>
+
+<% @article_types = ArticleType.all %>
+
+<% news_page = @cms_site.pages.find_by_slug('news-and-documents') %>
+
+<% unless news_page.blank? %> 
+  <% @articles = news_page.children.published.limit(total_articles) %>
+<% end %>
+
+<div id="articles">
+  
+  <div class="row column">
+    <filters> 
+      <% @article_types.each do |type| %>
+          <checkbox name='<%= type.name %>'></checkbox>
+      <% end %>
+    </filters>
+  </div>
+    
+  <% unless @articles.blank? %>
+
+    <articles>
+      <% @articles.each do |article| %>
+
+       <%= render partial: 'shared/article.html.erb', locals: { article: article } %>
+
+      <% end %>
+    </articles>
+
+  <% else %>
+      
+    <div class="row column">
+      <p>There are no articles to show.</p>
+    </div>
+
+  <% end %>
+
+</div>
+
