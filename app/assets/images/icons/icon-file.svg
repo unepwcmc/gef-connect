@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="84px" height="105px" viewBox="0 0 84 105" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
+    <title>Icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Graphic-design" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Recent-story" transform="translate(-678.000000, -555.000000)" fill-rule="nonzero" fill="#FFFFFF">
+            <g id="Document-image" transform="translate(543.000000, 540.000000)">
+                <g id="Icon" transform="translate(135.000000, 15.000000)">
+                    <path d="M58.0512099,0 L13.7827294,0 C6.18318283,0 0,6.18310226 0,13.7836443 L0,91.2152611 C0,98.8158032 6.18208827,105 13.7827294,105 L70.2172706,105 C77.8168172,105 84,98.8168977 84,91.2152611 L84,29.0033358 L58.0512099,0 Z M59.6129032,12.1935484 L73.1612903,27.0967742 L59.6129032,27.0967742 L59.6129032,12.1935484 Z M70.661013,98.9032258 L14.0164063,98.9032258 C10.0228621,98.9032258 6.77419355,95.6562619 6.77419355,91.665065 L6.77419355,14.0112567 C6.77419355,10.0211574 10.0228621,6.77419355 14.0164063,6.77419355 L53.6793864,6.77419355 L53.6793864,33.8256396 L77.9032258,33.8256396 L77.9032258,91.665065 C77.9032258,95.6562619 74.6545572,98.9032258 70.661013,98.9032258 Z" id="Shape"></path>
+                    <rect id="Rectangle-path" x="22.3548387" y="44.0322581" width="39.9677419" height="6.77419355"></rect>
+                    <rect id="Rectangle-path" x="22.3548387" y="58.9354839" width="39.9677419" height="6.77419355"></rect>
+                    <rect id="Rectangle-path" x="22.3548387" y="73.8387097" width="39.9677419" height="6.77419355"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
