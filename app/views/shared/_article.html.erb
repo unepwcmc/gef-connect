@@ -1,7 +1,7 @@
 <% category = cms_block_content(:article_type, article) %>
 <% url      = article.url(:relative) %>
 
-<article-listing category="<%= cms_block_content(:article_type, article) %>">
+<article-listing category="<%= category %>">
   <div class="row">
     <div class="small-6 columns">
       <span class="article__date"><%= article.created_at.strftime('%d %B %Y') %></span>
@@ -18,6 +18,15 @@
 
     <% if cms_block_content(:image, article)&.file&.present? %>
       <%= image_tag cms_block_content(:image, article).file.url(:thumbnail), alt: article.label %>
+    <% else %>
+      <div class="article__placeholder-image-wrapper">
+        <%= image_tag 'backgrounds/placeholder-article-image.jpg', alt: 'Green background image', class: 'article__placeholder-background' %>
+
+        <% placeholder_image = category == 'Document' ? 'file' : 'article' %>
+        <% placeholder_class = category == 'Document' ? 'document' : 'news' %>
+
+        <%= image_tag "icons/icon-#{placeholder_image}.svg", alt: "#{placeholder_class.capitalize} icon", class: "article__placeholder-image article__placeholder-image--#{placeholder_class}" %>
+      </div>
     <% end %>
 
   <% end %>
