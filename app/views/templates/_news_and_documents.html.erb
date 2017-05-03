@@ -4,7 +4,7 @@
 
 <%# set variables for view %>
 <% @article_types = ArticleType.all %>
-<% @articles = @cms_page.children.published %>
+<% @articles = @cms_page.children.published.reorder(created_at: :desc) %>
 
 <div class="template--news template-padding site-padding">
   <div class="row">
