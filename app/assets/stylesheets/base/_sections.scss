@@ -1,0 +1,19 @@
+//--------------------------------------------------------------------------------
+// sections
+//--------------------------------------------------------------------------------
+section {
+  &.section-padding {
+    padding-top: rem-calc(28);
+    padding-bottom: rem-calc(28);
+
+    @include breakpoint(medium){ 
+      padding-top: rem-calc(56);
+      padding-bottom: rem-calc(56);
+    }
+
+    @include breakpoint(large){ 
+      padding-top: rem-calc(70);
+      padding-bottom: rem-calc(70);
+    }
+  }  
+}

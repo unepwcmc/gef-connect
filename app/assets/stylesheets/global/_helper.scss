@@ -4,6 +4,7 @@
 // - backgrounds
 // - display
 // - text
+// - site padding
 //--------------------------------------------------------------------------------
 // backgrounds
 //--------------------------------------------------------------------------------
@@ -55,3 +56,19 @@
   display: inline-block;
 }
 
+//--------------------------------------------------------------------------------
+// site padding
+//--------------------------------------------------------------------------------
+// this class is used to add additional outer left and right padding to sections on 
+// mobile and tablet
+.site-padding {
+  @include breakpoint(small only){
+    padding-right: rem-calc(8);
+    padding-left: rem-calc(8);
+  }
+
+  @include breakpoint(medium only){
+    padding-right: rem-calc(15);
+    padding-left: rem-calc(15);    
+  }
+}

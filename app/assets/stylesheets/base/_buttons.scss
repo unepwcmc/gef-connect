@@ -1,0 +1,25 @@
+//--------------------------------------------------------------------------------
+// buttons
+//--------------------------------------------------------------------------------
+%button-text {
+  font-family: $fira-sans;
+  font-style: italic;
+  font-weight: $semi-bold;
+}
+
+.button {
+  @extend %button-text;
+  margin-right: rem-calc(14);
+
+  &--arrow {
+    @extend %button-text;
+
+    color: $primary-color;
+
+    &:before {
+      content: '\f177';
+      font-family: $font-awesome;
+      margin-right: rem-calc(10);
+    }
+  }
+}
