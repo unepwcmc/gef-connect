@@ -6,6 +6,7 @@
 .icon {
   &--flag-link {
     margin-left: rem-calc(13);
+    text-decoration: none;
     
     @include breakpoint(large){
       margin-left: rem-calc(30);

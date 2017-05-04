@@ -13,7 +13,7 @@
     </div>
   </div>
 
-  <%= link_to url do %>
+  <%= link_to url, title: "View the article: #{article.label}", class: 'article__link' do %>
     <h3><%= article.label %></h3>
 
     <% if cms_block_content(:image, article)&.file&.present? %>
