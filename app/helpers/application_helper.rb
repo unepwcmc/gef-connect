@@ -26,4 +26,8 @@ module ApplicationHelper
 
     size.round(decimal_places).to_s + format.to_s
   end
+
+  def format_url_safe(text)
+    CGI.escape(text)
+  end
 end
