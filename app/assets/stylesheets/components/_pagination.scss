@@ -2,14 +2,34 @@
 // pagination
 //--------------------------------------------------------------------------------
 .pagination {
+  border-top: solid rem-calc(1) $medium-gray;
+  padding-top: rem-calc(24);
+  text-align: center;
 
   &__button {
     color: $dark-gray;
     cursor: not-allowed;
+    font-family: $fira-sans;
+    font-weight: $medium;
+    font-style: italic;
+    margin: rem-calc(0 14);
   }
 
   &__button--active {
     color: $primary-color;
     cursor: pointer;
+  }
+
+  &__current {
+    background-color: $primary-color;
+    border-radius: 100%;
+    color: $white;
+    font-weight: $global-weight-bold;
+    line-height: rem-calc(30);
+    margin: rem-calc(0 5);
+    text-align: center;
+    width: rem-calc(30); height: rem-calc(30);
+    
+    display: inline-block;
   }
 }

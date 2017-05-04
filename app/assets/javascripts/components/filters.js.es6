@@ -192,8 +192,10 @@ Vue.component('pagination', {
   },
 
   template: `
-    <div class="pagination" v-show="totalPages > 0">
-      <span class="pagination__button" :class="{ 'pagination__button--active' : previousIsActive }" @click="changePage(previousIsActive, 'previous')"><< Previous</span> Page <span class="pagination__current">{{ currentPage }}</span> of {{ totalPages }} <span class="pagination__button" :class="{ 'pagination__button--active' : nextIsActive }" @click="changePage(nextIsActive, 'next')">Next >></span>
+    <div class="row column">
+      <div class="pagination" v-show="totalPages > 0">
+        <span class="pagination__button" :class="{ 'pagination__button--active' : previousIsActive }" @click="changePage(previousIsActive, 'previous')"><< Previous</span> Page <span class="pagination__current">{{ currentPage }}</span> of {{ totalPages }} <span class="pagination__button" :class="{ 'pagination__button--active' : nextIsActive }" @click="changePage(nextIsActive, 'next')">Next >></span>
+      </div>
     </div>
   `,
 

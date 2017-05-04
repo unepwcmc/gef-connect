@@ -17,7 +17,7 @@
 <div id="articles">
 
   <div class="row column">
-    <filters>
+    <filters v-show="<%= pagination %>">
       <% article_types.each do |type| %>
           <checkbox name='<%= type.name %>'></checkbox>
       <% end %>
