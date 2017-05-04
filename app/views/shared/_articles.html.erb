@@ -3,7 +3,7 @@
 <% news_page = @cms_site.pages.find_by_slug('news-and-documents') %>
 
 <% unless news_page.blank? %>
-  <% @articles = news_page.children.published.limit(total_articles) %>
+  <% @articles = news_page.children.published.limit(total_articles).reorder(created_at: :desc) %>
 <% end %>
 
 <div id="articles">
