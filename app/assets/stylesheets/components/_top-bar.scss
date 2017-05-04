@@ -34,6 +34,18 @@
         //@include hamburger($color, $color-hover, $width, $height, $weight, $bars);
         @include hamburger($primary-color, $black, rem-calc(26), rem-calc(21), rem-calc(3));
       }
+
+  &__nav-wrapper {
+    width: 100%;
+
+    position: absolute;
+
+    @include breakpoint(medium){
+      width: auto;
+
+      position: static;
+    }
+  }
 }
 
 //--------------------------------------------------------------------------------
