@@ -6,7 +6,7 @@
   <% @articles = news_page.children.published.limit(total_articles).reorder(created_at: :desc) %>
 <% end %>
 
-<div id="articles">
+<div id="articles" class="fouc">
 
   <div class="row column">
     <filters>
