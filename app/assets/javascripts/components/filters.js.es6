@@ -4,6 +4,19 @@
 window.EventBus = new Vue();
 
 //--------------------------------------------------------------------------------
+// Store
+//--------------------------------------------------------------------------------
+var store = {
+  state: {
+    articles: [], //contains article objects
+    currentPage: 1,
+    articlesPerPage: 0,
+    activeCategoryArray: [], //contains the ticked categories
+    activeArticleArray: [] //contains indicies of articles that whose category is 'active'
+  }
+}
+
+//--------------------------------------------------------------------------------
 // filters
 //--------------------------------------------------------------------------------
 Vue.component('filters', {
@@ -14,17 +27,10 @@ Vue.component('filters', {
     </div>
   `,
 
-  data() {
-    return {
-      categories: []
-    }
-  },
-
   methods: {
-    //update the active category array then emit the changes
-    updateCategories:function(category){
+    categoriesChanged:function(category){
       this.updateCategoryList();
-      EventBus.$emit('filtersChanged', this.categories);
+      EventBus.$emit('filtersChanged');
     },
 
     //update the active category array
@@ -33,15 +39,16 @@ Vue.component('filters', {
 
       if(checkboxes.length != 0){
         
-        this.categories = [];
+        var activeCategoryArray = [];
 
         checkboxes.forEach(checkbox => {
 
           if(checkbox.isActive){
-            this.categories.push(checkbox.name);
+            activeCategoryArray.push(checkbox.name);
           }
-          
         });
+
+        store.state.activeCategoryArray = activeCategoryArray;
       }
     }
   },
@@ -49,7 +56,7 @@ Vue.component('filters', {
   mounted(){
     this.updateCategoryList();
 
-    EventBus.$on('categoriesChanged', this.updateCategories);
+    EventBus.$on('categoriesChanged', this.categoriesChanged);
   }
 });
 
@@ -93,25 +100,58 @@ var test = Vue.component('articles', {
   `,
 
   methods: {
-    //loop through each article and update the isActive property against the new active category array
-    filterArticles: function(categories){
-      this.articles.forEach(article => {
-        article.isActive = categories.includes(article.category);
+    filterArticles: function(){
+      store.state.activeArticleArray = [];
+
+      store.state.articles.forEach(article => {
+        article.catIsActive = store.state.activeCategoryArray.includes(article.category);
+        if(article.catIsActive){ store.state.activeArticleArray.push(article.index); }
       });
-    }
+
+      this.paginateArticles();
+      store.state.currentPage = 1;
+    },
+
+    paginateArticles: function(){
+      var pageStart = (store.state.currentPage - 1) * store.state.articlesPerPage;
+      var pageEnd =  pageStart + store.state.articlesPerPage;
+
+      this.currentPageArray = store.state.activeArticleArray.slice(pageStart, pageEnd);
+
+      store.state.articles.forEach(article => {
+        article.isActive = this.currentPageArray.includes(article.index);
+      });
+    },
+
+    updateActiveArticles: function(){
+      store.state.articles.forEach(article => {
+        article.isActive = (this.currentPageArray.includes(article.index) && store.state.categories.includes(article.category));
+      });
+    },
   },
 
   data(){
     return {
-      articles: []
+      articleIndexArray: [],
+      currentPageArray: []
     }
   },
 
   mounted(){
-    this.articles = this.$children;
+    store.state.articles = this.$children;
+
+    //create array containing article indices
+    store.state.articles.forEach(article => {
+      this.articleIndexArray.push(article.index);
+    });
 
     //refilter the articles when the filters change
     EventBus.$on('filtersChanged', this.filterArticles);
+
+    //repaginate the articles when previous or next is clicked
+    EventBus.$on('pageChanged', this.paginateArticles);
+
+    this.filterArticles();
   }
 });
 
@@ -120,19 +160,88 @@ var test = Vue.component('articles', {
 //--------------------------------------------------------------------------------
 Vue.component('article-listing', {
   props: {
-    category: { required: true }
+    category: { required: true },
+    id: { required: true }
   },
 
   template:`
-    <div class="article column" :category="category" v-show="isActive">
+    <div class="article column" :category="category" v-if="isActive">
       <slot></slot>
     </div>
   `,
 
   data(){
     return {
-      isActive: true
+      isActive: true,
+      catIsActive: true,
+      index: Number
     }
+  },
+
+  mounted() {
+    this.index = this.id;
+  }
+});
+
+//--------------------------------------------------------------------------------
+// pagination
+//--------------------------------------------------------------------------------
+Vue.component('pagination', {
+  props: {
+    articlesPerPage: { required: true }
+  },
+
+  template: `
+    <div class="pagination" v-show="totalPages > 0">
+      <span class="pagination__button" :class="{ 'pagination__button--active' : previousIsActive }" @click="changePage(previousIsActive, 'previous')"><< Previous</span> Page <span class="pagination__current">{{ currentPage }}</span> of {{ totalPages }} <span class="pagination__button" :class="{ 'pagination__button--active' : nextIsActive }" @click="changePage(nextIsActive, 'next')">Next >></span>
+    </div>
+  `,
+
+  data(){
+    return {
+      totalArticles: Number,
+      currentPage: store.state.currentPage,
+      lastPage: Number,
+      totalPages: Number,
+      nextIsActive: false,
+      previousIsActive: false,
+    }
+  },
+
+  methods: {
+
+    updateButtons: function(){
+      this.totalPages = Math.ceil(store.state.activeArticleArray.length/store.state.articlesPerPage);
+
+      this.nextIsActive = this.currentPage < this.totalPages;
+      this.previousIsActive = this.currentPage > 1;
+
+      EventBus.$emit('pageChanged');
+    },
+
+    changePage: function(isActive, direction){
+      if(isActive){
+        
+        var newPage = direction == 'next' ? this.currentPage + 1 : this.currentPage - 1;
+
+        store.state.currentPage = newPage;
+        this.updateCurrentPage();
+        this.updateButtons();
+      }
+    },
+
+    updateCurrentPage: function(){
+      this.currentPage = store.state.currentPage;
+    }
+  },
+
+  mounted(){
+    store.state.articlesPerPage = this.articlesPerPage;
+
+    this.updateButtons();
+
+    EventBus.$on('filtersChanged', this.updateButtons);
+    EventBus.$on('filtersChanged', this.updateCurrentPage);
   }
 });
 
@@ -143,6 +252,6 @@ Vue.component('article-listing', {
 var element = document.getElementById("articles");
 if (element != null) {
   new Vue({
-    el: '#articles'
+    el: '#articles',
   });
 }

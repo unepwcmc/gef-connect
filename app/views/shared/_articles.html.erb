@@ -1,16 +1,24 @@
-<% total_articles = total_articles ||= 6 %>
-<% @article_types = ArticleType.all %>
+<% #locals %>
+<% pagination = pagination ||= false %>
+<% articles_per_page = articles_per_page ||= 6 %>
+
+<% #declare variables for view %>
+<% article_types = ArticleType.all %>
 <% news_page = @cms_site.pages.find_by_slug('news-and-documents') %>
 
 <% unless news_page.blank? %>
-  <% @articles = news_page.children.published.limit(total_articles) %>
+  <% if pagination %>
+    <% @articles = news_page.children.published %>
+   <% else %>
+    <% @articles = news_page.children.published.limit(articles_per_page) %>
+  <% end %>
 <% end %>
 
 <div id="articles">
 
   <div class="row column">
     <filters>
-      <% @article_types.each do |type| %>
+      <% article_types.each do |type| %>
           <checkbox name='<%= type.name %>'></checkbox>
       <% end %>
     </filters>
@@ -19,10 +27,12 @@
   <% unless @articles.empty? %>
 
     <articles>
-      <% @articles.each do |article| %>
-       <%= render partial: 'shared/article', locals: { article: article } %>
+      <% @articles.each_with_index do |article, index| %>
+       <%= render partial: 'shared/article', locals: { article: article, index: index } %>
       <% end %>
     </articles>
+    
+    <pagination v-show="<%= pagination %>" articles-per-page="<%= articles_per_page %>"></pagination>
 
   <% else %>
 

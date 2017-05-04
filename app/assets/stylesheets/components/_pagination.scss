@@ -1,0 +1,15 @@
+//--------------------------------------------------------------------------------
+// pagination
+//--------------------------------------------------------------------------------
+.pagination {
+
+  &__button {
+    color: $dark-gray;
+    cursor: not-allowed;
+  }
+
+  &__button--active {
+    color: $primary-color;
+    cursor: pointer;
+  }
+}
