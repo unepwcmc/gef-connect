@@ -2,7 +2,7 @@
   <%= @cms_page.label %>
 <% end %>
 
-<div class="template--news template-padding site-padding">
+<main class="template--news template-padding site-padding">
   <div class="row">
     <div class="small-12 columns">
       <h1>News and Documents</h1>
@@ -15,4 +15,4 @@
   <%= render partial: 'shared/articles', locals: { articles_per_page: 9, pagination: true } %>
 
   </div>
-</div>
+</main>

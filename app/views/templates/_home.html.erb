@@ -1,4 +1,4 @@
-<div class="template--home">
+<main class="template--home">
 
   <section class="hero">
     <div class="row">
@@ -40,11 +40,11 @@
     </div>
   </section>
 
-  <section class="bg--grey section-padding site-padding">
+  <section class="bg--grey section-padding site-padding" aria-labelledby="objectives-title">
 
     <div class="row">
       <div class="small-12 large-10 columns">
-        <h2>Using an innovative deman, supply and sustain model the project will:</h2>
+        <h2 id="objectives-title">Using an innovative deman, supply and sustain model the project will:</h2>
       </div>
     </div>
 
@@ -81,10 +81,10 @@
 
   </section>
 
-  <section class="section-padding site-padding">
+  <section class="section-padding site-padding" aria-labelledby="news-title">
     <div class="row">
       <div class="small-12 medium-6 large-4 columns">
-        <h2>News &amp; Documents</h2>
+        <h2 id="news-title">News &amp; Documents</h2>
       </div>
       <div class="small-12 medium-6 large-8 columns">
         <%= link_to 'View all News & Documents >', "#{@cms_site.path}/news-and-documents", class: 'button' %>
@@ -96,4 +96,4 @@
     </div>
   </section>
 
-</div>
+</main>
