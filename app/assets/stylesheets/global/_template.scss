@@ -28,5 +28,11 @@
       @include breakpoint(medium){ font-size:rem-calc(23); }
       @include breakpoint(large){ font-size:rem-calc(26); } 
     }
+
+    .home__articles {
+      margin-top: rem-calc(30);
+
+      @include breakpoint(medium){ margin-top: rem-calc(44); }
+    }
   }
 }
