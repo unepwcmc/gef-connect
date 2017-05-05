@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require vue
 //= require foundation.core.js.es6
 //= require foundation.util.triggers.js
@@ -24,4 +23,7 @@
 
 $(function(){ 
   $(document).foundation();
+
+  //required to prevent FOUC
+  $('html').removeClass('loading-js');
 });

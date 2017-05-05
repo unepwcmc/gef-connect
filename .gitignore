@@ -19,5 +19,6 @@
 .DS_Store
 .env
 node_modules
+public/assets
 public/system
 public/bootstrap
