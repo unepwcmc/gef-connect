@@ -17,7 +17,9 @@ Simple brochure website built on Comfortable Mexian Sofa. It has a news section 
 
 ### Tech
 
-- Foundation 6 (Using Flexbox grid)
+- Google fonts
+- Foundation 6 (Using 12 column grid)
+- Vuejs 2.0
 - Comfy Mexican Sofa
 - Ruby 2.3.4
 - Rails 4.2.5.2
@@ -36,7 +38,7 @@ N.B Do not use CSS3 transforms, they are not supported in Opera Mini (02/05/2017
 
 ### Styling
 
-- Custom styles have been set for <ol> and <ul>, wrap any tich text content pulled from the CMS with the class `custom-lists`.
+- Custom styles have been set for ol and ul tags, wrap any tich text content pulled from the CMS with the class `custom-lists`.
 
 ## Local development
 
