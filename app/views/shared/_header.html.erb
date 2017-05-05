@@ -3,7 +3,7 @@
   <div class="top-bar">
 
     <div class="top-bar__bar">
-      <%= link_to root_path, title: 'Connect home page' do %>
+      <%= link_to root_path, title: 'Connect home page', class: 'top-bar__logo-link' do %>
         <%= image_tag 'logos/logo-connect.svg', alt: 'Connect logo', class: 'top-bar__logo' %>
       <% end %>
       
@@ -12,7 +12,7 @@
       </div>
     </div>
 
-    <div id="main-menu" class="top-bar-right fouc">
+    <div id="main-menu" class="top-bar-right fouc top-bar__nav-wrapper">
       <nav class="nav">
         <%= active_link_to 'Home', root_path, { title: 'Home', class: 'nav__a' } %>
 

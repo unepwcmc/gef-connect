@@ -56,6 +56,10 @@
       }
     }
     
+    &__link {
+      text-decoration: none;
+    }
+
     &__intro {
       margin-top: rem-calc(8);
     }
@@ -109,6 +113,7 @@
       font-weight: $medium;
       margin-top: rem-calc(16);
       padding-right: rem-calc(22);
+      text-decoration: none;
 
       float: right;
       position: relative;
