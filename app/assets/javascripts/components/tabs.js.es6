@@ -8,8 +8,8 @@ Vue.component('tabs', {
         <div class="tabs__dropdown">
           <p class="tabs__dropdown-title hide-for-medium">Select a section</p>
           <div class="v-dropdown-button tabs__dropdown-button hide-for-medium" @click="toggleDropdown()">{{ selectedTabName }}</div>
-          <ul class="tab-titles" v-show="isOpen">
-            <li v-for="tab in tabs" @click="selectTab(tab)" class="tab--title" :class="{ 'active' : tab.isActive }">
+          <ul class="tab-titles" v-show="isOpen" role="tablist">
+            <li v-for="tab in tabs" @click="selectTab(tab)" class="tab--title" :class="{ 'active' : tab.isActive }" role="tab">
               {{ tab.name }}
             </li>
           </ul>
@@ -85,7 +85,7 @@ Vue.component('tab', {
   },
 
   template: `
-    <div v-show="isActive" class="tab--content">
+    <div v-show="isActive" class="tab--content" role="tabpanel" v-bind="{ 'aria-hidden' : ariaHidden }">
       <slot></slot>
     </div>
   `,
@@ -93,6 +93,12 @@ Vue.component('tab', {
   data(){
     return {
       isActive: false
+    }
+  },
+
+  computed: {
+    ariaHidden(){
+      return this.isActive.toString();
     }
   },
 

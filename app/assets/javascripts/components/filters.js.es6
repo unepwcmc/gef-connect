@@ -69,14 +69,20 @@ Vue.component('checkbox', {
   },
 
   template: `
-    <span class="filters__checkbox" :class="{ 'active' : isActive }" @click='clickCheckbox'>
+    <span class="filters__checkbox" :class="{ 'active' : isActive }" @click='clickCheckbox' role="checkbox" v-bind="{'aria-checked': ariaChecked }">
       {{ name }}
     </span>
   `,
 
   data(){
     return {
-      isActive: { default: true }
+      isActive: true,
+    }
+  },
+
+  computed: {
+    ariaChecked(){
+      return this.isActive.toString();
     }
   },
 
@@ -94,9 +100,9 @@ Vue.component('checkbox', {
 //--------------------------------------------------------------------------------
 var test = Vue.component('articles', {
   template:`
-    <div class="row small-up-1 medium-up-2 large-up-3 articles">
+    <article class="row small-up-1 medium-up-2 large-up-3 articles">
       <slot></slot>
-    </div>
+    </article>
   `,
 
   methods: {
@@ -194,7 +200,7 @@ Vue.component('pagination', {
   template: `
     <div class="row column">
       <div class="pagination" v-show="totalPages > 0">
-        <span class="pagination__button" :class="{ 'pagination__button--active' : previousIsActive }" @click="changePage(previousIsActive, 'previous')"><< Previous</span> Page <span class="pagination__current">{{ currentPage }}</span> of {{ totalPages }} <span class="pagination__button" :class="{ 'pagination__button--active' : nextIsActive }" @click="changePage(nextIsActive, 'next')">Next >></span>
+        <button class="pagination__button" :class="{ 'pagination__button--active' : previousIsActive }" @click="changePage(previousIsActive, 'previous')" v-bind="{ 'aria-disabled' : ariaDisabledPrevious }"><< Previous</button> Page <span class="pagination__current">{{ currentPage }}</span> of {{ totalPages }} <button class="pagination__button" :class="{ 'pagination__button--active' : nextIsActive }" @click="changePage(nextIsActive, 'next')" v-bind="{ 'aria-disabled' : ariaDisabledNext }">Next >></button>
       </div>
     </div>
   `,
@@ -207,6 +213,16 @@ Vue.component('pagination', {
       totalPages: Number,
       nextIsActive: false,
       previousIsActive: false,
+    }
+  },
+
+  computed: {
+    ariaDisabledNext(){
+      return (!this.nextIsActive).toString();
+    },
+
+    ariaDisabledPrevious(){
+      return (!this.previousIsActive).toString();
     }
   },
 

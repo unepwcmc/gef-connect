@@ -24,7 +24,7 @@
     }
 
     &__date {
-      color: #53B250;
+      color: $secondary-color;
       font-style: italic;
 
       .template--article & {
