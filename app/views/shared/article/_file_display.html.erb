@@ -1,13 +1,14 @@
 <% if cms_block_content(file_field).try(:file)&.present? %>
   <% file           = cms_block_content(file_field).file %>
-  <% file_language  = cms_block_content(file_language_field).present? ? cms_block_content(file_language_field) : "English" %>
   <% file_label     = cms_block_content(file_label_field).present? ? cms_block_content(file_label_field) : file_name_for(file) %>
 
   <p>
     <strong>File name:</strong> <%= file_label %><br>
     <strong>File size:</strong> <%= file_size_for(file) %><br>
     <strong>Format:</strong>    <%= file_extension_for(file) %><br>
-    <strong>Language:</strong>  <%= file_language %>
+    <% if cms_block_content(file_language_field).present? %>
+      <strong>Language:</strong>  <%= cms_block_content(file_language_field) %>
+    <% end %>
   </p>
   <%= link_to "Download", file.url, title: "Download: #{file_label}", target: '_blank', class: 'button' %>
 <% end %>
