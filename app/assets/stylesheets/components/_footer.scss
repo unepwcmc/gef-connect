@@ -55,15 +55,21 @@
       padding-bottom: rem-calc(44);
     }
 
-    &-link {
+    &__link {
       text-decoration: none;
     }
 
-    &-link,
+    &__link,
     &-copy {
       @include breakpoint(small only){
         margin: rem-calc(10 0);
         display: block;  
+      }
+    }
+    
+    &__logo {
+      @include breakpoint(small only){
+        height: rem-calc(50);
       }
     }
 
