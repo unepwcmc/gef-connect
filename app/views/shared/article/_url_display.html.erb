@@ -1,0 +1,4 @@
+<% if cms_block_content(url_field).present? %>
+  <% url_label  = cms_block_content(url_label_field)   || "Visit site" %>
+  <%= link_to url_label, cms_block_content(url_field), title: "Visit: #{url_label}", target: '_blank', class: 'button' %>
+<% end %>

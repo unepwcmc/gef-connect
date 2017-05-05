@@ -40,25 +40,7 @@
       <% end %>
 
       <div class="article__buttons">
-        <% if cms_block_content(:file_1)&.file&.present? %>
-          <% file_1           = cms_block_content(:file_1).file %>
-          <% file_1_language  = cms_block_content(:file_1_language) || "English" %>
-          <% file_1_label     = cms_block_content(:file_1_label) || file_name_for(file_1) %>
-
-          <p>
-            <strong>File name:</strong> <%= file_1_label %><br>
-            <strong>File size:</strong> <%= file_size_for(file_1) %><br>
-            <strong>Format:</strong>    <%= file_extension_for(file_1) %><br>
-            <strong>Language:</strong>  <%= file_1_language %>
-          </p>
-          <%= link_to "Download", file_1.url, title: "Download this file", target: '_blank', class: 'button' %>
-        <% end %>
-
-        <% if cms_block_content(:url_1).present? %>
-          <% url_1_label  = cms_block_content(:url_1_label)   || "Visit site" %>
-
-          <%= link_to url_1_label, cms_block_content(:url_1), title: url_1_label, target: '_blank', class: 'button' %>
-        <% end %>
+        <%= render "shared/article/attachments_display" %>
       </div>
 
       <%= link_to 'News & Documents', "#{@cms_site.path}/news-and-documents", title: 'Visit the News and Documents page', class: 'button--arrow' %>
