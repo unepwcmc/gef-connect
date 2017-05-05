@@ -1,0 +1,14 @@
+<% 5.times do |n| %>
+  <%= render partial: "shared/article/file_display", locals: {
+    file_field:           "file_#{n + 1}".to_sym,
+    file_language_field:  "file_#{n + 1}_language".to_sym,
+    file_label_field:     "file_#{n + 1}_label".to_sym
+  } %>
+<% end %>
+
+<% 5.times do |n| %>
+  <%= render partial: "shared/article/url_display", locals: {
+    url_field:        "url_#{n + 1}".to_sym,
+    url_label_field:  "url_#{n + 1}_label".to_sym
+  } %>
+<% end %>
