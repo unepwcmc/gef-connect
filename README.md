@@ -38,7 +38,7 @@ N.B Do not use CSS3 transforms, they are not supported in Opera Mini (02/05/2017
 
 ### Styling
 
-- Custom styles have been set for ol and ul tags, wrap any tich text content pulled from the CMS with the class `custom-lists`.
+- Custom styles have been set for ol and ul tags, wrap any rich text content pulled from the CMS with the class `custom-lists`.
 
 ## Local development
 
