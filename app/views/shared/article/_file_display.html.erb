@@ -1,7 +1,7 @@
-<% if cms_block_content(file_field)&.file&.present? %>
+<% if cms_block_content(file_field).try(:file)&.present? %>
   <% file           = cms_block_content(file_field).file %>
-  <% file_language  = cms_block_content(file_language_field) || "English" %>
-  <% file_label     = cms_block_content(file_label_field) || file_name_for(file) %>
+  <% file_language  = cms_block_content(file_language_field).present? ? cms_block_content(file_language_field) : "English" %>
+  <% file_label     = cms_block_content(file_label_field).present? ? cms_block_content(file_label_field) : file_name_for(file) %>
 
   <p>
     <strong>File name:</strong> <%= file_label %><br>
