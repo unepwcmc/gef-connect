@@ -32,6 +32,12 @@ Simple brochure website built on Comfortable Mexian Sofa. It has a news section 
 
 N.B Do not use CSS3 transforms, they are not supported in Opera Mini (02/05/2017) <http://caniuse.com/#search=transforms>
 
+## Front end
+
+### Styling
+
+- Custom styles have been set for <ol> and <ul>, wrap any tich text content pulled from the CMS with the class `custom-lists`.
+
 ## Local development
 
 You will need ImageMagick installed, if you're using OSX you can do this through homebrew `brew install imageMagick`

@@ -8,9 +8,9 @@
 
 <% unless news_page.blank? %>
   <% if pagination %>
-    <% @articles = news_page.children.published %>
+    <% @articles = news_page.children.published.reorder(created_at: :desc) %>
    <% else %>
-    <% @articles = news_page.children.published.limit(articles_per_page) %>
+    <% @articles = news_page.children.published.limit(articles_per_page).reorder(created_at: :desc) %>
   <% end %>
 <% end %>
 
