@@ -1,35 +1,14 @@
-<%= render partial: "shared/article/file_display", locals: {
-  file_field:           :file_1,
-  file_language_field:  :file_1_language,
-  file_label_field:     :file_1_label
-} %>
+<% 5.times do |n| %>
+  <%= render partial: "shared/article/file_display", locals: {
+    file_field:           "file_#{n + 1}".to_sym,
+    file_language_field:  "file_#{n + 1}_language".to_sym,
+    file_label_field:     "file_#{n + 1}_label".to_sym
+  } %>
+<% end %>
 
-<%= render partial: "shared/article/file_display", locals: {
-  file_field:           :file_2,
-  file_language_field:  :file_2_language,
-  file_label_field:     :file_2_label
-} %>
-
-<%= render partial: "shared/article/file_display", locals: {
-  file_field:           :file_3,
-  file_language_field:  :file_3_language,
-  file_label_field:     :file_3_label
-} %>
-
-<%= render partial: "shared/article/file_display", locals: {
-  file_field:           :file_4,
-  file_language_field:  :file_4_language,
-  file_label_field:     :file_4_label
-} %>
-
-<%= render partial: "shared/article/file_display", locals: {
-  file_field:           :file_5,
-  file_language_field:  :file_5_language,
-  file_label_field:     :file_5_label
-} %>
-
-<%= render partial: "shared/article/url_display", locals: {url_field: :url_1, url_label_field: :url_1_label} %>
-<%= render partial: "shared/article/url_display", locals: {url_field: :url_2, url_label_field: :url_2_label} %>
-<%= render partial: "shared/article/url_display", locals: {url_field: :url_3, url_label_field: :url_3_label} %>
-<%= render partial: "shared/article/url_display", locals: {url_field: :url_4, url_label_field: :url_4_label} %>
-<%= render partial: "shared/article/url_display", locals: {url_field: :url_5, url_label_field: :url_5_label} %>
+<% 5.times do |n| %>
+  <%= render partial: "shared/article/url_display", locals: {
+    url_field:        "url_#{n + 1}".to_sym,
+    url_label_field:  "url_#{n + 1}_label".to_sym
+  } %>
+<% end %>
