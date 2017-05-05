@@ -17,12 +17,16 @@
 
     @include breakpoint(medium){ display: inline; }
   }
-
-    &__logo {
-      @include breakpoint(small only) {
-        height: rem-calc(50);
-      }
+    
+    &__logo-link {
+      text-decoration: none;
     }
+
+      &__logo {
+        @include breakpoint(small only) {
+          height: rem-calc(50);
+        }
+      }
 
     &__burger-wrapper {
       @include vertical-center;
@@ -68,7 +72,9 @@
 
     color: $body-font-color;
     font-family: $fira-sans;
+    font-weight: $global-weight-normal;
     margin: rem-calc(0 15);
+    text-decoration: none;
 
     &.active {
       color: $primary-color;

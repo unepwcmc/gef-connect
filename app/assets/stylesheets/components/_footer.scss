@@ -55,6 +55,10 @@
       padding-bottom: rem-calc(44);
     }
 
+    &-link {
+      text-decoration: none;
+    }
+
     &-link,
     &-copy {
       @include breakpoint(small only){
