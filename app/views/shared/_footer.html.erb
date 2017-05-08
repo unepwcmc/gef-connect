@@ -3,21 +3,21 @@
     <div class="small-12 medium-6 columns">
       <div class="footer__logo-wrapper">
         <h4>Donor</h4>
-        <%= link_to 'https://www.thegef.org/', title: 'Visit the Global Environment Facility website' do %>
+        <%= link_to 'https://www.thegef.org/', title: 'Visit the Global Environment Facility website', target: '_blank' do %>
           <%= image_tag 'logos/logo-gef.svg', alt: 'GEF logo', class: 'footer__logo' %>
         <% end %>
       </div>
 
       <div class="footer__logo-wrapper">
         <h4>Implmenting agency</h4>
-        <%= link_to 'http://web.unep.org/', title: 'Visit the UN Environment website' do %>
+        <%= link_to 'http://web.unep.org/', title: 'Visit the UN Environment website', target: '_blank' do %>
           <%= image_tag 'https://s3.amazonaws.com/wcmc.logo/UN-Environment-+logo+2017.svg ', alt: 'UN Environment logo', class: 'footer__logo' %>
         <% end %>
       </div>
       
       <div class="footer__logo-wrapper">
         <h4>Executing agency</h4>
-        <%= link_to 'https://www.unep-wcmc.org/', title: 'Visit the UN Environment World Conservation Monitoring Centre website' do %>
+        <%= link_to 'https://www.unep-wcmc.org/', title: 'Visit the UN Environment World Conservation Monitoring Centre website', target: '_blank' do %>
           <%= image_tag 'https://s3.amazonaws.com/wcmc.logo/UN-Environment-WCMC+logo+2017.svg', alt: 'UN Environment World Conservation Monitoring Centre logo', class: 'footer__logo' %>
         <% end %>
       </div>
@@ -27,15 +27,15 @@
       <div class="inline-block">
         <h4>National executing agencies</h4>
         <div>
-          <%= link_to 'https://nba.org.gh/', title: 'Visit the National Biosafety Authority website', class: 'icon--flag-link' do %>
+          <%= link_to 'https://nba.org.gh/', title: 'Visit the National Biosafety Authority website', target: '_blank', class: 'icon--flag-link' do %>
             <%= image_tag 'icons/flag-ghana.svg', class: 'icon--flag', alt: 'The Ghana flag' %>
           <% end %>
         
-          <%= link_to '#', title: '', class: 'icon--flag-link' do %>
+          <%= link_to '#', title: '', target: '_blank', class: 'icon--flag-link' do %>
             <%= image_tag 'icons/flag-mozambique.svg', class: 'icon--flag', alt: 'The Mozambique flag' %>
           <% end %>
 
-          <%= link_to 'http://www.nema.go.ug/', title: 'Visit the National Environment Management Authority website', class: 'icon--flag-link' do %>
+          <%= link_to 'http://www.nema.go.ug/', title: 'Visit the National Environment Management Authority website', target: '_blank', class: 'icon--flag-link' do %>
             <%= image_tag 'icons/flag-uganda.svg', class: 'icon--flag', alt: 'The Uganda flag' %>
           <% end %>
         </div>
