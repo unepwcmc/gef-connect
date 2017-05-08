@@ -12,6 +12,15 @@ set :repo_url, 'git@github.com:unepwcmc/gef-connect.git'
 set :deploy_user, 'wcmc'
 
 
+set :rvm_map_bins, %w{gem rake ruby rails bundle}
+set :db_dump_dir, "./db"
+set :db_local_clean, true
+set :db_remote_clean, true
+
+
+
+
+
 set :backup_path, "/home/#{fetch(:deploy_user)}/Backup"
 
 

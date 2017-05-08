@@ -42,6 +42,7 @@ group :development do
   gem 'capistrano-npm'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+  gem 'capistrano-db-tasks', '0.6', require: false
 end
 
 

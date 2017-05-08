@@ -8,6 +8,10 @@ set :application, "gef-connect"
 set :server_name, "gef-connect.web-staging.linode.unep-wcmc.org"
 set :sudo_user, "wcmc"
 set :app_port, "80"
+set :rails_env, :staging
+
+
+
 
 
 set :npm_flags, "--silent --no-progress"
