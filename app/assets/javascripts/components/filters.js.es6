@@ -110,7 +110,7 @@ var test = Vue.component('articles', {
       store.state.activeArticleArray = [];
 
       store.state.articles.forEach(article => {
-        article.catIsActive = store.state.activeCategoryArray.includes(article.category);
+        article.catIsActive = store.state.activeCategoryArray.indexOf(article.category) >= 0;
         if(article.catIsActive){ store.state.activeArticleArray.push(article.index); }
       });
 
@@ -125,13 +125,13 @@ var test = Vue.component('articles', {
       this.currentPageArray = store.state.activeArticleArray.slice(pageStart, pageEnd);
 
       store.state.articles.forEach(article => {
-        article.isActive = this.currentPageArray.includes(article.index);
+        article.isActive = this.currentPageArray.indexOf(article.index) >= 0;
       });
     },
 
     updateActiveArticles: function(){
       store.state.articles.forEach(article => {
-        article.isActive = (this.currentPageArray.includes(article.index) && store.state.categories.includes(article.category));
+        article.isActive = (this.currentPageArray.indexOf(article.index) >= 0 && store.state.categories.indexOf(article.category) >= 0);
       });
     },
   },
