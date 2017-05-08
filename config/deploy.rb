@@ -29,7 +29,7 @@ set :backup_path, "/home/#{fetch(:deploy_user)}/Backup"
 set :deploy_to, "/home/#{fetch(:deploy_user)}/#{fetch(:application)}"
 
 # Default value for :scm is :git
-set :scm, :git
+
 set :scm_username, "unepwcmc-read"
 
 
