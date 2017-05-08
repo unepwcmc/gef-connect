@@ -200,7 +200,7 @@ Vue.component('pagination', {
   template: `
     <div class="row column">
       <div class="pagination" v-show="totalPages > 0">
-        <button class="pagination__button" :class="{ 'pagination__button--active' : previousIsActive }" @click="changePage(previousIsActive, 'previous')" v-bind="{ 'aria-disabled' : ariaDisabledPrevious }"><< Previous</button> Page <span class="pagination__current">{{ currentPage }}</span> of {{ totalPages }} <button class="pagination__button" :class="{ 'pagination__button--active' : nextIsActive }" @click="changePage(nextIsActive, 'next')" v-bind="{ 'aria-disabled' : ariaDisabledNext }">Next >></button>
+        <button class="pagination__button" :class="{ 'pagination__button--active' : previousIsActive }" @click="changePage(previousIsActive, 'previous')" v-bind="{ 'aria-disabled' : ariaDisabledPrevious }"><< <span class="show-for-medium">Previous</span></button> Page <span class="pagination__current">{{ currentPage }}</span> of {{ totalPages }} <button class="pagination__button" :class="{ 'pagination__button--active' : nextIsActive }" @click="changePage(nextIsActive, 'next')" v-bind="{ 'aria-disabled' : ariaDisabledNext }"><span class="show-for-medium">Next</span> >></button>
       </div>
     </div>
   `,
