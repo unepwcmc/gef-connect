@@ -12,14 +12,6 @@ set :repo_url, 'git@github.com:unepwcmc/gef-connect.git'
 set :deploy_user, 'wcmc'
 
 
-set :rvm_map_bins, %w{gem rake ruby rails bundle}
-set :db_dump_dir, "./db"
-set :db_local_clean, true
-set :db_remote_clean, true
-
-
-
-
 
 set :backup_path, "/home/#{fetch(:deploy_user)}/Backup"
 
@@ -27,8 +19,6 @@ set :backup_path, "/home/#{fetch(:deploy_user)}/Backup"
 
 # Default deploy_to directory is /var/www/my_app_name
 set :deploy_to, "/home/#{fetch(:deploy_user)}/#{fetch(:application)}"
-
-# Default value for :scm is :git
 
 set :scm_username, "unepwcmc-read"
 
@@ -68,3 +58,12 @@ set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', '
 set :keep_releases, 5
 
 set :passenger_restart_with_touch, false
+
+
+
+# Settings for capistrano-db-tasks gem
+set :rvm_map_bins, %w{gem rake ruby rails bundle}
+set :db_dump_dir, "./db"
+set :db_local_clean, true
+set :db_remote_clean, true
+
