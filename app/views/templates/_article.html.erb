@@ -2,6 +2,9 @@
   <%= @cms_page.label %>
 <% end %>
 
+<% content_for :social_meta_tags { @cms_page.path } %>
+
+
 <main class="template--article template-padding site-padding">
   <div class="row">
     <div class="small-12 medium-10 medium-centered large-8 column">
