@@ -2,6 +2,14 @@
   <%= @cms_page.label %>
 <% end %>
 
+<%= render partial: "shared/article/social_meta_tags", locals: {
+  label:        @cms_page.label,
+  description:  cms_block_content(:introduction),
+  image:        "#{root_url.gsub(/\/$/, '')}#{cms_block_content(:image).try(:file)&.url(:large)}",
+  site_name:    "Connect - #{@cms_page.label}",
+  url:          "#{root_url.gsub(/\/$/, '')}#{@cms_page.full_path}",
+} %>
+
 <main class="template--article template-padding site-padding">
   <div class="row">
     <div class="small-12 medium-10 medium-centered large-8 column">
@@ -29,7 +37,7 @@
         </div>
       <% end %>
 
-      <% if cms_block_content(:image)&.file&.present? %>
+      <% if cms_block_content(:image).try(:file)&.present? %>
         <%= image_tag cms_block_content(:image).file.url(:thumbnail), alt: @cms_page.label, class: 'article__image' %>
       <% end %>
 

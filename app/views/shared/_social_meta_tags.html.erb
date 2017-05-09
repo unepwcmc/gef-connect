@@ -1,0 +1,15 @@
+<!-- Facebook card -->
+<meta property="og:title" content="<%= yield(:title).presence || 'Connect' %>">
+<meta property="og:description" content="<%= yield(:description).presence || 'Mainstreaming biodiversity into the heart of government decision making' %>">
+<meta property="og:image" content="<%= yield(:image).presence || "#{root_url.gsub(/\/$/, '')}/connect-facebook.jpg" %>">
+<meta property="og:url" content="<%= yield(:url).presence || root_url.gsub(/\/$/, '') %>">
+<meta property="og:site_name" content="<%= yield(:site_name).presence || 'Connect' %>"/>
+
+<!-- Twitter card -->
+<meta name="twitter:card" content="<%= yield(:image).present? ? 'summary_large_image' : 'summary' %>" />
+<meta name="twitter:title" content="<%= yield(:title).presence || 'Connect' %>" />
+<meta name="twitter:description" content="<%= yield(:description).presence || 'Mainstreaming biodiversity into the heart of government decision making' %>" />
+<% if yield(:image).present? %>
+<meta name="twitter:image" content="<%= yield(:image) %>" />
+<% end %>
+
