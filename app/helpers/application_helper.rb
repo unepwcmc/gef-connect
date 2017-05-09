@@ -30,4 +30,8 @@ module ApplicationHelper
   def format_url_safe(text)
     CGI.escape(text)
   end
+
+  def encode(string)
+    URI.encode(string)
+  end
 end
