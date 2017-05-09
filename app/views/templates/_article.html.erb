@@ -2,7 +2,15 @@
   <%= @cms_page.label %>
 <% end %>
 
-<% content_for :social_meta_tags { @cms_page.path } %>
+<%= content_for (:fb_title) { } %>
+<%= content_for (:fb_description) {} %>
+<%= content_for (:fb_image) {} %>
+<%= content_for (:fb_url) {} %>
+<%= content_for (:fb_site_name) {} %>
+<%= content_for (:tw_image) {} %>
+<%= content_for (:tw_title) {} %>
+<%= content_for (:tw_description) {} %>
+<%= content_for (:tw_image) {} %>
 
 
 <main class="template--article template-padding site-padding">

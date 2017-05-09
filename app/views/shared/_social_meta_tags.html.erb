@@ -1,12 +1,15 @@
 <!-- Facebook card -->
 <meta property="og:title" content="<%= yield_or_default(:fb_title, 'Connect') %>">
 <meta property="og:description" content="<%= yield_or_default(:fb_description, 'Mainstreaming biodiversity into the heart of government decision making') %>">
-<meta property="og:image" content="<%= yield_or_default(:fb_image, 'http://') %>">
-<meta property="og:url" content="<%= yield_or_default(:fb_url, 'http://') %>">
+<meta property="og:image" content="<%= yield_or_default(:fb_image, "#{root_url.gsub(/\/$/, '')}/connect-facebook.jpg") %>">
+<meta property="og:url" content="<%= yield_or_default(:fb_url, root_url.gsub(/\/$/, '')) %>">
 <meta property="og:site_name" content="<%= yield_or_default(:fb_site_name, 'Connect') %>"/>
 
 <!-- Twitter card -->
 <meta name="twitter:card" content="<%= yield(:tw_image).present? ? 'summary_large_image' : 'summary' %>" />
 <meta name="twitter:title" content="<%= yield_or_default(:tw_title, 'Connect') %>" />
 <meta name="twitter:description" content="<%= yield_or_default(:tw_description, 'Mainstreaming biodiversity into the heart of government decision making') %>" />
-<meta name="twitter:image" content="<%= yield_or_default(:tw_image, 'Default Title') %>" />
+<% if yield(:tw_image).present? %>
+  <meta name="twitter:image" content="<%= yield(:tw_image) %>" />
+<% end %>
+
