@@ -1,3 +1,9 @@
+GIT
+  remote: git://github.com/adambutler/vuejs-rails.git
+  revision: 95b67d750e18b824ac66c65cf81e59e66f362a8d
+  specs:
+    vuejs-rails (2.3.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -251,7 +257,6 @@ GEM
       thread_safe (~> 0.1)
     uglifier (3.2.0)
       execjs (>= 0.3.0, < 3)
-    vuejs-rails (2.2.1)
     web-console (2.3.0)
       activemodel (>= 4.0)
       binding_of_caller (>= 0.7.2)
@@ -288,7 +293,7 @@ DEPENDENCIES
   spring
   turbolinks
   uglifier (~> 3.2.0)
-  vuejs-rails (~> 2.2.1)
+  vuejs-rails (~> 2.3.2)!
   web-console (~> 2.0)
 
 BUNDLED WITH

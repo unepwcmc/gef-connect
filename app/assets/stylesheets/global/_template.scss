@@ -1,4 +1,7 @@
 .template {
+  position: relative;
+  z-index: -1;
+
   &-padding {
     padding-top: rem-calc(24);
     padding-bottom: rem-calc(30);

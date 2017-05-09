@@ -24,14 +24,22 @@
   }
 
   &--flag {
-    width: 29%;
-    max-width: rem-calc(90);
+    @include breakpoint(small only){
+      width: 29%;
+      max-width: rem-calc(73);
+    }
 
+    @include breakpoint(medium){
+      width: rem-calc(73);
+    }
+
+    @include breakpoint(large){
+      width: rem-calc(90);
+    }
+    
     .footer__logos & {
-      @include breakpoint(medium){
-        width: 7.5vw;  
-
-        &:first-child { margin: 0; }
+      &:first-child {
+        @include breakpoint(medium){ margin: 0; }
       }
     }
   }

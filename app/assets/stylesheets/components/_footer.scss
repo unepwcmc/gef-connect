@@ -29,9 +29,10 @@
       }
     }
       &__logo {
-        height: rem-calc(44);
+        width: auto; height: rem-calc(44);
+        max-width: none;
 
-        @include breakpoint(medium){
+        @include breakpoint(medium only){
           height: 5vw;
           max-height: rem-calc(60);
         }
