@@ -27,8 +27,3 @@ $(function(){
   //required to prevent FOUC
   $('html').removeClass('loading-js');
 });
-
-//options that need to be set to false in production
-// Vue.config.productionTip = false;
-// Vue.devtools = false;
-// Vue.performance = false;
