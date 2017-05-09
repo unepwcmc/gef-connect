@@ -28,6 +28,8 @@ $(function(){
   $('html').removeClass('loading-js');
 });
 
+console.log('process.env.NODE_ENV = ', process.env.NODE_ENV);
+
 //options that need to be set to false in production
 // Vue.config.productionTip = false;
 // Vue.devtools = false;
