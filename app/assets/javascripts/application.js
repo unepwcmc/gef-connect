@@ -26,4 +26,19 @@ $(function(){
 
   //required to prevent FOUC
   $('html').removeClass('loading-js');
+
+  if(true){
+    $('body').addClass('test');
+  }
+
+  if(typeof process !== 'undefined'){
+    $('body').addClass('hello');
+    console.log(process.env.NODE_ENV);
+    Vue.config.productionTip = process.env.NODE_ENV == 'development'
+  }
 });
+
+//options that need to be set to false in production
+// Vue.config.productionTip = false;
+// Vue.devtools = false;
+// Vue.performance = false;
