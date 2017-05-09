@@ -30,8 +30,4 @@ module ApplicationHelper
   def format_url_safe(text)
     CGI.escape(text)
   end
-
-  def yield_or_default(symbol, default)
-    yield(symbol).present? ? yield(symbol) : default
-  end
 end
