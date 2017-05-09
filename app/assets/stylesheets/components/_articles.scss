@@ -79,16 +79,26 @@
       }
 
       &__placeholder-image {
-        margin-top: rem-calc(-52);
-        margin-left: rem-calc(-56);
-        width: auto; height: rem-calc(104);
+        margin-top: rem-calc(-42);
+        margin-left: rem-calc(-45);
+        width: auto; height: rem-calc(84);
 
         position: absolute;
         top: 50%;
         left: 50%;
+
+        @include breakpoint(medium){
+          margin-top: rem-calc(-52);
+          margin-left: rem-calc(-56);
+          height: rem-calc(104);
+        }
       }
         
-      &__placeholder-image--document { margin-left: rem-calc(-42); }
+      &__placeholder-image--document { 
+        margin-left: rem-calc(-33);
+
+        @include breakpoint(medium){ margin-left: rem-calc(-42); }
+      }
 
     &__copy {
       margin-top: rem-calc(18);

@@ -108,7 +108,7 @@
         color: $white;
 
         @include breakpoint(medium){
-          background-color: initial;
+          background-color: $white;
           color: $primary-color;
         }
 
