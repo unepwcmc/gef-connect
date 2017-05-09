@@ -28,10 +28,6 @@ module ApplicationHelper
   end
 
   def format_url_safe(text)
-    CGI.escape(text)
-  end
-
-  def encode(string)
-    URI.encode(string)
+    ERB::Util.url_encode(text)
   end
 end
