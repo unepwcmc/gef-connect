@@ -33,7 +33,7 @@
         content: counter(step-counter) '.';
         font-weight: $global-weight-bold;
         font-style: italic;
-        line-height: rem-calc(26);
+        line-height: 26px; //Use px so it works in IE11
         text-align: center;
         width: rem-calc(26); height: rem-calc(26);
 
