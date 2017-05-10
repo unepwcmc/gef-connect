@@ -37,9 +37,15 @@
       right: rem-calc(16);
     }
 
+      &__burger-text {
+        color: $primary-color;
+        font-family: $fira-sans;
+        font-weight: $semi-bold;
+      }
+
       &__burger {
-        //@include hamburger($color, $color-hover, $width, $height, $weight, $bars);
         @include hamburger($primary-color, $black, rem-calc(26), rem-calc(21), rem-calc(3));
+        margin-left: rem-calc(10);
       }
 
   &__nav-wrapper {
