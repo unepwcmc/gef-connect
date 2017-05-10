@@ -7,7 +7,10 @@
 // top-bar
 //--------------------------------------------------------------------------------
 .top-bar {
-  border-bottom: solid rem-calc(1) $medium-gray;;
+  border-bottom: solid rem-calc(1) $medium-gray;
+  
+  position: relative;
+  z-index: 1;
   
   &__bar {
     padding: 0;
