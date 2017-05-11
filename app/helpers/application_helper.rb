@@ -30,4 +30,23 @@ module ApplicationHelper
   def format_url_safe(text)
     ERB::Util.url_encode(text)
   end
+
+  def any_fields_present(type, total)
+    if type == 'file'
+
+      total.times do |n|
+        return true if cms_block_content("file_#{n + 1}".to_sym).try(:file)&.present?
+      end
+
+    else
+
+      total.times do |n|
+        return true if cms_block_content("url_#{n + 1}".to_sym)&.present?
+      end
+
+    end
+
+    return false
+  end
+
 end

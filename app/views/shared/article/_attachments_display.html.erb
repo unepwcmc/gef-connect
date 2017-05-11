@@ -1,9 +1,5 @@
-<% if cms_block_content(:file_1).try(:file)&.present? ||
-      cms_block_content(:file_2).try(:file)&.present? ||
-      cms_block_content(:file_3).try(:file)&.present? ||
-      cms_block_content(:file_4).try(:file)&.present? ||
-      cms_block_content(:file_5).try(:file)&.present?
-%>
+<% if any_fields_present('file', 5) %>
+
   <h3>File Downloads</h3>
   
   <div class="article__files row small-up-1 medium-up-2 large-up-3">
@@ -19,12 +15,7 @@
   </div>
 <% end %>
 
-<% if cms_block_content(:url_1).present? ||
-      cms_block_content(:url_2).present? ||
-      cms_block_content(:url_3).present? ||
-      cms_block_content(:url_4).present? ||
-      cms_block_content(:url_5).present?
-%>
+<% if any_fields_present('url', 5) %>
 
   <h3>Useful Links</h3>
   
