@@ -3,8 +3,12 @@
 //--------------------------------------------------------------------------------
 h1 {
   margin-bottom: rem-calc(18);
-
+  
   @include breakpoint(medium){ margin-bottom: rem-calc(24); }
+
+  .template--home & {
+    text-shadow: rem-calc(2 2 4) rgba(0, 0, 0, 0.33);
+  }
 }
 
 h4 {

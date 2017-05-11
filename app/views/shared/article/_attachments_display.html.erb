@@ -1,14 +1,32 @@
-<% 5.times do |n| %>
-  <%= render partial: "shared/article/file_display", locals: {
-    file_field:           "file_#{n + 1}".to_sym,
-    file_language_field:  "file_#{n + 1}_language".to_sym,
-    file_label_field:     "file_#{n + 1}_label".to_sym
-  } %>
+<% if any_fields_present('file', 5) %>
+
+  <h3>File Downloads</h3>
+  
+  <div class="article__files row small-up-1 medium-up-2 large-up-3">
+    
+    <% 5.times do |n| %>
+      <%= render partial: "shared/article/file_display", locals: {
+        file_field:           "file_#{n + 1}".to_sym,
+        file_language_field:  "file_#{n + 1}_language".to_sym,
+        file_label_field:     "file_#{n + 1}_label".to_sym
+      } %>
+    <% end %>
+
+  </div>
 <% end %>
 
-<% 5.times do |n| %>
-  <%= render partial: "shared/article/url_display", locals: {
-    url_field:        "url_#{n + 1}".to_sym,
-    url_label_field:  "url_#{n + 1}_label".to_sym
-  } %>
+<% if any_fields_present('url', 5) %>
+
+  <h3>Useful Links</h3>
+  
+  <div class="article__links">
+
+    <% 5.times do |n| %>
+      <%= render partial: "shared/article/url_display", locals: {
+        url_field:        "url_#{n + 1}".to_sym,
+        url_label_field:  "url_#{n + 1}_label".to_sym
+      } %>
+    <% end %>
+
+  </div>
 <% end %>

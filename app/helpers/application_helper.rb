@@ -30,4 +30,13 @@ module ApplicationHelper
   def format_url_safe(text)
     ERB::Util.url_encode(text)
   end
+
+  def any_fields_present(type, total=5)
+    file_fields_present = -> (n) { cms_block_content("file_#{n + 1}".to_sym).try(:file)&.present? }
+    url_fields_present = -> (n) { cms_block_content("url_#{n + 1}".to_sym)&.present? }
+    any_data_for_field = type == 'file' ? file_fields_present : url_fields_present
+    
+    (1..total).any? { |n| any_data_for_field[n] }
+  end
 end
+
