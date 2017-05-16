@@ -120,6 +120,10 @@
       &__links {
         margin-bottom: rem-calc(14);
       }
+
+        &__external-link {
+          display: block;
+        }
       
         &__file {
           margin-bottom: rem-calc(14);
