@@ -42,6 +42,17 @@
         }
       }
 
+    &__link--agency {
+      margin-left: rem-calc(13);
+      text-decoration: none;
+
+      @include breakpoint(large){
+        margin-left: rem-calc(60);
+      }
+
+      &:first-child { margin: 0; }
+    }
+
   &__contact {
     padding-top: rem-calc(24);
     padding-bottom: rem-calc(24);
