@@ -1,45 +1,74 @@
 <footer class="footer">
-  <div class="row footer__logos">
-    <div class="small-12 medium-6 columns">
-      <div class="footer__logo-wrapper">
-        <h4>Donor</h4>
-        <%= link_to 'https://www.thegef.org/', title: 'Visit the Global Environment Facility website', target: '_blank' do %>
-          <%= image_tag 'logos/logo-gef.svg', alt: 'GEF logo', class: 'footer__logo' %>
-        <% end %>
-      </div>
-
-      <div class="footer__logo-wrapper">
-        <h4>Implementing agency</h4>
-        <%= link_to 'http://web.unep.org/', title: 'Visit the UN Environment website', target: '_blank' do %>
-          <%= image_tag 'https://s3.amazonaws.com/wcmc.logo/UN-Environment-+logo+2017.svg ', alt: 'UN Environment logo', class: 'footer__logo' %>
-        <% end %>
-      </div>
-      
-      <div class="footer__logo-wrapper">
-        <h4>Executing agency</h4>
-        <%= link_to 'https://www.unep-wcmc.org/', title: 'Visit the UN Environment World Conservation Monitoring Centre website', target: '_blank' do %>
-          <%= image_tag 'https://s3.amazonaws.com/wcmc.logo/UN-Environment-WCMC+logo+2017.svg', alt: 'UN Environment World Conservation Monitoring Centre logo', class: 'footer__logo' %>
-        <% end %>
-      </div>
+  <div class="footer__logos">
+    <div class="row column">
+      <h4>Partners</h4>
     </div>
+    <div class="row column">
+      <%= link_to 'https://www.thegef.org/', 
+        title: 'Visit the Global Environment Facility website', 
+        target: '_blank',
+        class: 'footer__link' do %>
 
-    <div class="small-12 medium-6 columns">
-      <div class="inline-block">
-        <h4>National executing agencies</h4>
-        <div>
-          <%= link_to 'https://nba.org.gh/', title: 'Visit Ghana\'s National Biosafety Authority website', class: 'footer__link--agency', target: '_blank' do %>
-            <%= image_tag 'logos/logo-national-biosafety-authority.png', class: 'footer__logo', alt: 'The National Biosafety Authority logo' %>
-          <% end %>
-        
-          <%= link_to 'http://www.portaldogoverno.gov.mz/', title: 'Visit the Mozambique government website ', class: 'footer__link--agency', target: '_blank' do %>
-            <%= image_tag 'logos/logo-mozambique.png', class: 'footer__logo', alt: 'The Mozambique government logo' %>
-          <% end %>
+        <%= image_tag 'logos/logo-gef.svg', 
+          alt: 'GEF logo', 
+          class: 'footer__logo' %>
 
-          <%= link_to 'http://www.nema.go.ug/', title: 'Visit Uganda\'s National Environment Management Authority website', class: 'footer__link--agency', target: '_blank' do %>
-            <%= image_tag 'logos/logo-national-environment-management-authority.png', class: 'footer__logo', alt: 'The National Environment Management Authority logo' %>
-          <% end %>
-        </div>
-      </div>
+      <% end %>
+      
+      <%= link_to 'http://web.unep.org/', 
+        title: 'Visit the UN Environment website', 
+        target: '_blank',
+        class: 'footer__link' do %>
+
+        <%= image_tag 'https://s3.amazonaws.com/wcmc.logo/UN-Environment-+logo+2017.svg ', 
+          alt: 'UN Environment logo', 
+          class: 'footer__logo' %>
+
+      <% end %>
+      
+      <%= link_to 'https://www.unep-wcmc.org/', 
+        title: 'Visit the UN Environment World Conservation Monitoring Centre website', 
+        target: '_blank',
+        class: 'footer__link' do %>
+
+        <%= image_tag 'https://s3.amazonaws.com/wcmc.logo/UN-Environment-WCMC+logo+2017.svg', 
+          alt: 'UN Environment World Conservation Monitoring Centre logo', 
+          class: 'footer__logo' %>
+
+      <% end %>
+
+      <%= link_to 'https://nba.org.gh/', 
+        title: 'Visit Ghana\'s National Biosafety Authority website', 
+        target: '_blank',
+        class: 'footer__link' do %>
+
+        <%= image_tag 'logos/logo-national-biosafety-authority.png', 
+          class: 'footer__logo', 
+          alt: 'The National Biosafety Authority logo' %>
+
+      <% end %>
+    
+      <%= link_to 'http://www.portaldogoverno.gov.mz/', 
+        title: 'Visit the Mozambique government website ', 
+        target: '_blank',
+        class: 'footer__link' do %>
+
+        <%= image_tag 'logos/logo-mozambique.png', 
+          class: 'footer__logo', 
+          alt: 'The Mozambique government logo' %>
+
+      <% end %>
+
+      <%= link_to 'http://www.nema.go.ug/', 
+        title: 'Visit Uganda\'s National Environment Management Authority website', 
+        target: '_blank',
+        class: 'footer__link' do %>
+
+        <%= image_tag 'logos/logo-national-environment-management-authority.png', 
+          class: 'footer__logo', 
+          alt: 'The National Environment Management Authority logo' %>
+
+      <% end %>
     </div>
   </div>
 
