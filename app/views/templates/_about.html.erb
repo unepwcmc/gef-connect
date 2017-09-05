@@ -15,7 +15,7 @@
       <% (1..numberOfTabs).each do |i| %>
       
         <% if cms_block_content("tab-#{i}-title") != '' %>
-          <tab name="<%= cms_block_content("tab-#{i}-title") %>">
+          <tab<% if i == 1 %> selected="true"<% end %> name="<%= cms_block_content("tab-#{i}-title") %>">
             <h2><%= cms_block_content("tab-#{i}-title") %></h2>
 
             <div class="custom-lists">
