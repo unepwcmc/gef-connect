@@ -1,3 +1,5 @@
+<% numberOfTabs = 4 %>
+
 <% content_for :title do %>
   <%= @cms_page.label %>
 <% end %>
@@ -9,37 +11,20 @@
   
   <div id="vue-tabs" class="fouc">
     <tabs class="tabs">
-      <tab selected="true" name="<%= cms_block_content('tab-1-title') %>">
-        <h2><%= cms_block_content('tab-1-title') %></h2>
 
-        <div class="custom-lists">
-          <%= cms_block_content_render('tab-1-content') %>
-        </div>
-      </tab>
+      <% (1..numberOfTabs).each do |i| %>
       
-      <tab name="<%= cms_block_content('tab-2-title') %>">
-        <h2><%= cms_block_content('tab-2-title') %></h2>
+        <% if cms_block_content("tab-#{i}-title") != '' %>
+          <tab name="<%= cms_block_content("tab-#{i}-title") %>">
+            <h2><%= cms_block_content("tab-#{i}-title") %></h2>
 
-        <div class="custom-lists">
-          <%= cms_block_content_render('tab-2-content') %>
-        </div>
-      </tab>
-      
-      <tab name="<%= cms_block_content('tab-3-title') %>">
-        <h2><%= cms_block_content('tab-3-title') %></h2>
+            <div class="custom-lists">
+              <%= cms_block_content_render("tab-#{i}-title") %>
+            </div>
+          </tab>
+        <% end %>
+      <% end %>
 
-        <div class="custom-lists">
-          <%= cms_block_content_render('tab-3-content') %>
-        </div>
-      </tab>
-
-      <tab name="<%= cms_block_content('tab-4-title') %>">
-        <h2><%= cms_block_content('tab-4-title') %></h2>
-
-        <div class="custom-lists">
-          <%= cms_block_content_render('tab-4-content') %>
-        </div>
-      </tab>
     </tabs>
   </div>
 </main>
