@@ -16,6 +16,21 @@
     }
   }
 
+    &__copy {
+      color: $dark-gray;
+      font-size: rem-calc(12);
+      margin: rem-calc(8 0 0 0);
+      text-align: center;
+
+      @include breakpoint(medium){ 
+        font-size: rem-calc(13);
+        margin-right: 35%;
+        text-align: left;
+      }
+
+      @include breakpoint(large){ font-size: rem-calc(14); }
+    }
+
     &__link {
       margin-left: rem-calc(13);
       margin-bottom: rem-calc(18);
