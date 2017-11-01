@@ -28,7 +28,11 @@
 
     <articles>
       <% @articles.each_with_index do |article, index| %>
-       <%= render partial: 'shared/article', locals: { article: article, index: index } %>
+
+        <% if article.layout.identifier == 'article' # check that the article layout is being used %>
+          <%= render partial: 'shared/article', locals: { article: article, index: index } %>
+        <% end %>
+
       <% end %>
     </articles>
     
