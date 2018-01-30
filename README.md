@@ -51,9 +51,3 @@ bundle install
 npm install
 rails db:create && db:migrate
 ```
-
-## Hosted sites
-
-### Staging
-
-<http://gef-connect.web-staging.linode.unep-wcmc.org/>
