@@ -1,8 +1,47 @@
-.hero {
-  background: $primary-color image-url('backgrounds/hero-uganda-jacksonshartebeest-landscape.jpg') center;
+//--------------------------------------------------
+// keyframes
+//--------------------------------------------------
+@keyframes background2 {
+  0% { opacity: 0; }
+  13% { opacity: 0; }
+  23% { opacity: 1; }
+  56% { opacity: 1; }
+  57% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+@keyframes background3 {
+  0% { opacity: 0; }
+  46% { opacity: 0; }
+  56% { opacity: 1; }
+  89% { opacity: 1; }
+  99% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+//--------------------------------------------------
+// reusable styles
+//--------------------------------------------------
+%backgroundImage {
+  background-position: center;
   background-size: cover;
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
+
+//--------------------------------------------------
+// hero
+//--------------------------------------------------
+.hero {
   padding: rem-calc(46 0);
   text-align: center;
+
+  position: relative;
 
   @include breakpoint(medium){ padding: rem-calc(90 0); }
   @include breakpoint(large){ padding: rem-calc(136 0); }
@@ -13,5 +52,24 @@
 
     @include breakpoint(medium){ font-size: rem-calc(45); }
     @include breakpoint(large){ font-size: rem-calc(62); }
+  }
+
+  &__background-1 {
+    @extend %backgroundImage; 
+    background-image: image-url('backgrounds/busua-beach-ghana.jpg');
+  }
+
+  &__background-2 {
+    @extend %backgroundImage;
+    background-image: image-url('backgrounds/queen-elizabeth-national-park-uganda.jpg');
+    
+    animation: background2 20s infinite;
+  }
+
+  &__background-3 {
+    @extend %backgroundImage;
+    background-image: image-url('backgrounds/gorongosa-national-park-mozambique.jpg');
+    
+    animation: background3 20s infinite;
   }
 }
