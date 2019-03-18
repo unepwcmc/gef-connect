@@ -10,7 +10,7 @@ set :sudo_user, "wcmc"
 set :app_port, "80"
 
 
-set :npm_flags, "--silent --no-progress"
+#set :npm_flags, "--silent --no-progress"
 
 
 
