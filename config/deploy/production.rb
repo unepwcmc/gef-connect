@@ -1,11 +1,12 @@
+
 set :stage, :production
 set :branch, "master"
 
 
-server "web-production.linode.unep-wcmc.org", user: 'wcmc', roles: %w{app web db}
+server "web-supported-production.linode.unep-wcmc.org", user: 'wcmc', roles: %w{app web db}
 
 set :application, "gef-connect"
-set :server_name, "gef-connect.web-production.linode.unep-wcmc.org"
+set :server_name, "gef-connect.web-supported-production.linode.unep-wcmc.org"
 set :sudo_user, "wcmc"
 set :app_port, "80"
 
